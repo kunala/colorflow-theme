@@ -1,0 +1,32 @@
+.page-template-layout_work-php #primary { width:956px;margin:0 auto;padding-bottom:100px; }
+.page-template-layout_work-php h2.page-heading span.subsection { color:#ffffff; }
+.page-template-layout_work-php .sub-header { overflow:hidden;margin-bottom:20px;padding-top:1px;padding-bottom:1px; }
+.page-template-layout_work-php .sub-header h2.page-heading { margin:0;float:left; }
+.page-template-layout_work-php .sub-header span.subsection { color:#ffffff; }
+.page-template-layout_work-php .sub-header .projects-pagination { float:right;width:200px;position:relative; }
+.page-template-layout_work-php .sub-header .projects-pagination a { -webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;-webkit-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;-moz-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;background-color:rgba(0,0,0,0.2);display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline;width:30px;height:26px;position:absolute;background-position:center 7px;background-repeat:no-repeat;text-indent:-999em; }
+.page-template-layout_work-php .sub-header .projects-pagination a.previous { left:0;background-image:url("../images/icons/left_arrow.png"); }
+.page-template-layout_work-php .sub-header .projects-pagination a.next { right:0;background-image:url("../images/icons/right_arrow.png"); }
+.page-template-layout_work-php .sub-header .projects-pagination a.end { filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);opacity:0.5; }
+.page-template-layout_work-php .sub-header .projects-pagination p { text-align:center;line-height:26px; }
+.page-template-layout_work-php .project-highlights { background:#cdcdcd; }
+.page-template-layout_work-php .project-highlights .highlights-slideshow { margin-bottom:30px; }
+.page-template-layout_work-php .project-highlights .highlights-slideshow ul.slides { width:960px;height:400px;position:relative; }
+.page-template-layout_work-php .project-highlights .highlights-slideshow ul.slides li { position:absolute; }
+.page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation { padding:10px; }
+.page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li { display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline; }
+.page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li a { width:18px;height:18px;display:block;background-position:0 0;background-repeat:no-repeat;text-indent:-999em; }
+.page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li a { background-image:url("../images/icons/highlight_slide_marker.png"); }
+.page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li a.selected { background-image:url("../images/icons/highlight_slide_marker_selected.png"); }
+.page-template-layout_work-php .project-details { overflow:hidden; }
+.page-template-layout_work-php .project-details .text-content { float:left;width:575px; }
+.page-template-layout_work-php .project-details dl.overview { float:right;width:315px; }
+.page-template-layout_work-php .project-details dl.overview dt,
+.page-template-layout_work-php .project-details dl.overview dd { padding-left:25px;line-height:1.25em; }
+.page-template-layout_work-php .project-details dl.overview dt { color:#b6cbd7;padding-top:10px;font-weight:300; }
+.page-template-layout_work-php .project-details dl.overview dd { color:#fff;padding-bottom:10px;border-bottom:1px solid #37393a; }
+.page-template-layout_work-php .project-details dl.overview .services { border-left:4px solid #e08e17; }
+.page-template-layout_work-php .project-details dl.overview .colorist { border-left:4px solid #e9107a; }
+.page-template-layout_work-php .project-details dl.overview .source { border-left:4px solid #9e0f43; }
+.page-template-layout_work-php .project-details dl.overview .director { border-left:4px solid #191b68; }
+.page-template-layout_work-php .project-details dl.overview .cinematographer { border-left:4px solid #297db9; }
