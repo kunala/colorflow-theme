@@ -29,9 +29,13 @@ get_header();?>
         $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail');
         ?>
         <li>
-          <?php echo get_the_post_thumbnail( $post_id, 'thumbnail'); ?>
-          <h3><?php the_title(); ?></h3>
-          <?php the_excerpt(); ?>
+          <div class="headshot">
+            <?php echo get_the_post_thumbnail( $post_id, 'thumbnail'); ?>
+          </div>
+          <div class="bio">
+            <h3><?php the_title(); ?></h3>
+            <?php the_content(); ?>
+          </div>
         </li>
         <?php endwhile; ?>
       </ul>

@@ -14,20 +14,26 @@ if ( ! function_exists( 'turing_content_nav' ) ):
  *
  * @since turing 1.0
  */
-function turing_content_nav( $nav_id ) {
-	global $wp_query;
 
+
+function turing_content_nav( $nav_id ) {
+	global $num_projects;
+	global $wp_query;
+	$num_projects = wp_count_posts('project')->publish;
+	$project = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$nav_class = 'site-navigation paging-navigation';
 	if ( is_single() )
 		$nav_class = 'site-navigation post-navigation';
-
+	  
+		// echo $num_projects;
 	?>
+	<h2 style="font-size: 40px;"><?php  ?></h2>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="assistive-text"><?php _e( 'Post navigation', 'turing' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
-
 		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'turing' ) . '</span> %title' ); ?>
+		<p><?php echo $project.' of '.$num_projects ?></p>
 		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'turing' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>

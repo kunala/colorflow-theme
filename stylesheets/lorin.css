@@ -54,6 +54,10 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
 /* line 6, styles.css.scss */
 body {
   background-color: #10191c;
@@ -298,7 +302,7 @@ body.two-column #content {
     float: right;
     width: 275px; }
     /* line 200, _layout.scss */
-    body.two-column #content #secondary .subsection {
+    body.two-column #content #secondary aside.widget {
       padding-bottom: 25px;
       margin-bottom: 25px;
       border-bottom: 2px solid rgba(255, 255, 255, 0.08); }
@@ -311,7 +315,8 @@ body.two-column #content {
     body.two-column #content #secondary .subsection.updates .inner {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 14px 25px; }
+      padding: 14px 25px; 
+      overflow: hidden; }
       /* line 216, _layout.scss */
       body.two-column #content #secondary .subsection.updates .inner h4 {
         color: #a7b8c1;
@@ -325,8 +330,10 @@ body.two-column #content {
       /* line 228, _layout.scss */
       body.two-column #content #secondary .subsection.updates .inner .field {
         padding: 10px 0; }
+        body.two-column #content #secondary .subsection.updates .inner .field form { overflow: hidden; }
         /* line 231, _layout.scss */
-        body.two-column #content #secondary .subsection.updates .inner .field input, body.two-column #content #secondary .subsection.updates .inner .field button {
+        body.two-column #content #secondary .subsection.updates .inner .field input, 
+        body.two-column #content #secondary .subsection.updates .inner .field input[type="submit"] {
           display: -moz-inline-stack;
           display: inline-block;
           vertical-align: middle;
@@ -337,7 +344,7 @@ body.two-column #content {
           font-weight: 300;
           padding: 7px 0; }
         /* line 238, _layout.scss */
-        body.two-column #content #secondary .subsection.updates .inner .field input {
+        body.two-column #content #secondary .subsection.updates .inner .field input[type="text"] {
           -webkit-border-radius: 3px;
           -moz-border-radius: 3px;
           -ms-border-radius: 3px;
@@ -350,7 +357,8 @@ body.two-column #content {
           background: rgba(255, 255, 255, 0.27);
           border: none;
           padding-left: 7px;
-          width: 172px; }
+          width: 172px; 
+          float: left; }
           /* line 245, _layout.scss */
           body.two-column #content #secondary .subsection.updates .inner .field input {
             color: #000; }
@@ -360,8 +368,9 @@ body.two-column #content {
           /* line 247, _layout.scss */
           body.two-column #content #secondary .subsection.updates .inner .field input:-moz-placeholder {
             color: #000; }
+          
         /* line 250, _layout.scss */
-        body.two-column #content #secondary .subsection.updates .inner .field button {
+        body.two-column #content #secondary .subsection.updates .inner .field input[type="submit"] {
           -webkit-border-radius: 3px;
           -moz-border-radius: 3px;
           -ms-border-radius: 3px;
@@ -374,43 +383,61 @@ body.two-column #content {
           border: none;
           color: #fff;
           text-align: center;
-          width: 40px; }
+          width: 40px; 
+          float: right; 
+          margin-top: 3px; }
     /* line 263, _layout.scss */
-    body.two-column #content #secondary .subsection.recent-posts h4 {
+    body.two-column #content #secondary aside.advanced_recent_posts_widget h1 {
       color: #a5b6c0;
       font-size: 12px;
       font-weight: 300;
       margin-bottom: 26px; }
     /* line 270, _layout.scss */
-    body.two-column #content #secondary .subsection.recent-posts .post {
+    body.two-column #content #secondary aside.advanced_recent_posts_widget li {
+      padding: 0;
+      margin: 0;
+      position: relative;
+      padding-left: 85px;
+      min-height: 60px;
       clear: left;
       overflow: hidden; }
       /* line 274, _layout.scss */
-      body.two-column #content #secondary .subsection.recent-posts .post {
+      body.two-column #content #secondary aside.advanced_recent_posts_widget li {
         padding-bottom: 15px;
         margin-bottom: 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
       /* line 275, _layout.scss */
-      body.two-column #content #secondary .subsection.recent-posts .post:last-child {
+      body.two-column #content #secondary aside.advanced_recent_posts_widget li:last-child {
         padding-bottom: 0px;
         margin-bottom: 0px;
         border-bottom: none; }
       /* line 277, _layout.scss */
-      body.two-column #content #secondary .subsection.recent-posts .post .image {
-        float: left;
-        width: 85px; }
+      body.two-column #content #secondary aside.advanced_recent_posts_widget li .post-entry {
+        padding: 0;
+        border: 2px solid #fff;
+        background: #2C2B29;
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        left: 0;
+        top: 0;
+      }
+      body.two-column #content #secondary aside.advanced_recent_posts_widget li .post-entry img {
+        vertical-align: middle;
+        margin: 0;
+      }
       /* line 278, _layout.scss */
-      body.two-column #content #secondary .subsection.recent-posts .post .details {
-        padding-left: 85px; }
-      /* line 280, _layout.scss */
-      body.two-column #content #secondary .subsection.recent-posts .post p {
+      body.two-column #content #secondary aside.advanced_recent_posts_widget li a {
+        display: block;
         color: #b3c9d6;
         font-size: 16px;
         font-weight: 700;
         margin-bottom: 8px;
         line-height: 1.25em; }
         /* line 287, _layout.scss */
-        body.two-column #content #secondary .subsection.recent-posts .post p.date {
+        body.two-column #content #secondary aside.advanced_recent_posts_widget li p.post-date {
+          font-style: normal;
+          line-height: 1.25em;
           color: #ffffff;
           font-size: 12px;
           font-weight: 500;
@@ -742,6 +769,7 @@ body.blog .post {
   /* line 21, _blog.scss */
   body.blog .post .image {
     margin-bottom: 28px; }
+  body.blog .post .image img { border: 2px solid #fff;}
   /* line 23, _blog.scss */
   body.blog .post .post-content p {
     font-size: 16px;
@@ -912,18 +940,15 @@ body.work-page .sub-header {
       *display: inline;
       width: 30px;
       height: 26px;
-      position: absolute;
       background-position: center 7px;
       background-repeat: no-repeat;
       text-indent: -999em; }
       /* line 132, _work.scss */
-      body.work-page .sub-header .projects-pagination a.previous {
-        left: 0;
-        background-image: url("../images/icons/left_arrow.png"); }
+      body.work-page .sub-header .projects-pagination .nav-previous  { width: 30px; height: 26px; position: absolute; left: 0; top: 0; }
+      body.work-page .sub-header .projects-pagination .nav-previous a { background-image: url("../images/icons/left_arrow.png"); }  
       /* line 133, _work.scss */
-      body.work-page .sub-header .projects-pagination a.next {
-        right: 0;
-        background-image: url("../images/icons/right_arrow.png"); }
+      body.work-page .sub-header .projects-pagination .nav-next { width: 30px; height: 26px; position: absolute; right: 0; top: 0; }
+      body.work-page .sub-header .projects-pagination .nav-next a { background-image: url("../images/icons/right_arrow.png"); }
       /* line 134, _work.scss */
       body.work-page .sub-header .projects-pagination a.end {
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);

@@ -41,7 +41,7 @@
       $p_director = $custom_fields["director"][0];
       $p_producer = $custom_fields["producer"][0];
       $p_ographer = $custom_fields["ographer"][0];
-      $p_genre = get_the_term_list( $post->ID, 'Genre', '', ', ', '');
+      $p_genre = get_the_term_list( $post->ID, 'genre', '', ', ', '');
       $p_services = get_the_terms( $post->ID, 'service' );
       $p_colorists = get_the_terms( $post->ID, 'person' ); ?>
       <li class='slide' data-slide='<?php echo $i ?>'>

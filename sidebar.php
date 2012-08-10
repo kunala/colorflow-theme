@@ -14,43 +14,40 @@
 		
 		<div id="secondary" class="widget-area" role="complementary">
 			<?php $b_options = turing_get_theme_options(); ?>
-		  <aside class="widget">
-		    <a href="<?php bloginfo('rss_url'); ?>" class="rss2">Subscribe</a>
-		  <?php if (is_author() ) { ?>
-			  
-			  <h3>About <?php the_author(); ?></h3>
-			  <p><?php the_author_meta( "description"); ?></p>
-			<?php } 
-			else { ?>
-			  <a href="<?php bloginfo('rss_url'); ?>" class="rss2">Subscribe</a>
-			  <h3>About Turing</h3>
-			  <p><?php echo $b_options['company_bio']; ?></p>
-			<?php } ?>
-			</aside>
-			
+
 			<?php do_action( 'before_sidebar' ); ?>
+			
+			<aside id="text-2" class="widget widget_text">			
+        <div class="inner">
+          <div class="subsection location">
+            <h4>Zaentz Media Center</h4>
+            <p>
+              2600 10 Street <br>
+              Suite 4B <br>
+              Berkeley, CA 94710
+            </p>
+          </div>
+          <a class="contact-button" href="#">Contact Us</a>
+        </div>
+		  </aside>
+			
+			<aside class="widget subsection updates">
+        <div class="inner">
+          <h4>Get ColorFlow Updates</h4>
+          <div class="field">
+            <form action="http://campaigns.turingstudio.com/t/r/s/gjrkkl/" method="post" id="subForm">
+              <!-- <label for="name">Name:</label><br /><input type="text" name="cm-name" id="name" /><br /> -->
+              <!-- <label for="gjrkkl-gjrkkl">Email:</label><br /> -->
+              <input type="text" name="cm-gjrkkl-gjrkkl" id="gjrkkl-gjrkkl" placeholder="Enter your email address" />
+              <input type="submit" value="GO" />
+            </form>
+          </div>
+          <p>We'll never share you email. Ever.</p>
+        </div>
+      </aside>
 			
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-				<aside id="search" class="widget widget_search">
-					<?php get_search_form(); ?>
-				</aside>
-
-				<aside id="archives" class="widget">
-					<h1 class="widget-title"><?php _e( 'Archives', 'turing' ); ?></h1>
-					<ul>
-						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-					</ul>
-				</aside>
-
-				<aside id="meta" class="widget">
-					<h1 class="widget-title"><?php _e( 'Meta', 'turing' ); ?></h1>
-					<ul>
-						<?php wp_register(); ?>
-						<li><?php wp_loginout(); ?></li>
-						<?php wp_meta(); ?>
-					</ul>
-				</aside>
 
 			<?php endif; // end sidebar widget area ?>
 		</div><!-- #secondary .widget-area -->

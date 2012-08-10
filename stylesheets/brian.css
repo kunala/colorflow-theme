@@ -93,5 +93,17 @@ ul.grid { margin-top: 20px; }
 ul.grid li.cell .image img { width: 100%; height: auto; }
 body#talent .talent_list li { overflow: hidden; padding: 20px 0; line-height: 1.4em; font-size: .9em; }
 body#talent .talent_list h3 { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; }
-body#talent .talent_list img { float: left; margin: 0 20px 20px 0; border: 3px solid #fff; width: 120px; height: auto;}
+body#talent .talent_list .headshot { float: left; margin: 0 20px 20px 0; border: 3px solid #fff; background: #1B1C1E; width: 120px; height: 120px;}
+body#talent .talent_list .headshot img { width: 100%; height: auto;}
+body#talent .talent_list .bio { width: 400px; float: right; }
+
+.projects-pagination { }
+.projects-pagination nav#nav-above.site-navigation.post-navigation { }
+.projects-pagination nav#nav-above h1.assistive-text { display: none; }
+.projects-pagination nav#nav-above .nav-previous { }
+.projects-pagination nav#nav-above .nav-previous a { }
+.projects-pagination nav#nav-above .nav-previous a span.meta-nav { }
+.projects-pagination nav#nav-above .nav-next { }
+.projects-pagination nav#nav-above .nav-next a { }
+.projects-pagination nav#nav-above .nav-next a span.meta-nav { }
 

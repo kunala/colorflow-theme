@@ -43,7 +43,6 @@ function turing_setup() {
 	require( get_template_directory() . '/inc/amenity-post-type.php' );
 	require( get_template_directory() . '/inc/project-post-type.php' );
 	require( get_template_directory() . '/inc/talent-post-type.php' );
-	
 	load_theme_textdomain( 'turing', get_template_directory() . '/languages' );
 	/*** Add default posts and comments RSS feed links to head */
 	add_theme_support( 'automatic-feed-links' );
@@ -115,5 +114,9 @@ set_post_thumbnail_size( 150, 150 );
 // update_option('large_size_w', 500);
 // update_option('large_size_h', 500);
 // update_option('large_size_crop', 1);
-
+// Custom WordPress Admin Color Scheme
+function admin_css() {
+	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/stylesheets/admin.css' );
+}
+add_action('admin_print_styles', 'admin_css' );
 

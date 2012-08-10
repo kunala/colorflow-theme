@@ -23,7 +23,7 @@
   		#'menu_icon' => get_stylesheet_directory_uri() . '/article16.png',
   		'rewrite' => true,
   		'capability_type' => 'post',
-  		'hierarchical' => false,
+  		'hierarchical' => true,
   		'menu_position' => null,
   		'supports' => array('title','editor','thumbnail')
   	  ); 
