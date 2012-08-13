@@ -23,22 +23,22 @@ get_header(); ?>
           <p>Project 1 of 9</p> -->
         </div>
       </div>
-      <div class='project-highlights'>
-        <div class='highlights-slideshow'>
-          <ul class='slides'>
-            <li><img class="white-border" src="http://lorempixel.com/956/396/" /></li>
-            <li><img class="white-border" src="http://lorempixel.com/956/396/" /></li>
-            <li><img class="white-border" src="http://lorempixel.com/956/396/" /></li>
-            <li><img class="white-border" src="http://lorempixel.com/956/396/" /></li>
-          </ul>
-          <ul class='navigation'>
-            <li><a class="selected" href="#">Slide</a></li>
-            <li><a href="#">Slide</a></li>
-            <li><a href="#">Slide</a></li>
-            <li><a href="#">Slide</a></li>
-          </ul>
-        </div>
-      </div>
+      <?php
+        $args = array(
+          'post_type' => 'attachment',
+          'numberposts' => null,
+          'post_status' => null,
+          'post_parent' => $post->ID
+        ); 
+        $attachments = get_posts($args);
+        if ($attachments) {
+          echo '<div class="nivoSlider">';
+          foreach ($attachments as $attachment) {
+            echo wp_get_attachment_image( $attachment->ID, 'gallery' );
+          }
+          echo '</div>';
+        }
+      ?>
       <div class='project-details'>
         <div class='text-content'>
           <h3>Not sure what this top paragraph will be in terms of project content. ColorFlow post is the best equipped and technoligically advanced post-production and finishing studio in Norther California. Situated in the center of filmmaking and animation, it gets a ton of cool stuff happening.</h3>
@@ -46,17 +46,21 @@ get_header(); ?>
         </div>
         <dl class='overview'>
           <?php
+          $p_genre = get_the_terms( $post->ID, 'Genre');
+          $p_sources = get_the_terms( $post->ID, 'Source');
+          $p_colorists = get_the_terms( $post->ID, 'person');
+          $p_services = get_the_terms( $post->ID, 'service');
           $custom_fields = get_post_custom();
           $p_year = $custom_fields['year_completed'][0];
           $p_director = $custom_fields["director"][0];
           $p_producer = $custom_fields["producer"][0];
           $p_ographer = $custom_fields["ographer"][0]; ?>
           <dt class='services'>Services</dt>
-          <dd class='services'>Not Wired, Not Wired, Not Wired</dd>
+          <dd class='services'><?php foreach ( $p_services as $p_service ) { echo $p_service->name.', '; }?></dd>
           <dt class='colorist'>Colorist</dt>
-          <dd class='colorist'>Not Wired</dd>
+          <dd class='colorist'><?php foreach ( $p_colorists as $p_colorist ) { echo $p_colorist->name; }?></dd>
           <dt class='source'>Source</dt>
-          <dd class='source'>Not Wired</dd>
+          <dd class='source'><?php foreach ( $p_sources as $p_source ) { echo $p_source->name; }?></dd>
           <dt class='director'>Director</dt>
           <dd class='director'><?php echo $p_director; ?></dd>
           <dt class='cinematographer'>Cinematographer</dt>

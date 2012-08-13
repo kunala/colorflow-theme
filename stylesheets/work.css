@@ -5,8 +5,8 @@
 .page-template-layout_work-php .sub-header span.subsection { color:#ffffff; }
 .page-template-layout_work-php .sub-header .projects-pagination { float:right;width:200px;position:relative; }
 .page-template-layout_work-php .sub-header .projects-pagination a { -webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;-webkit-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;-moz-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;background-color:rgba(0,0,0,0.2);display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline;width:30px;height:26px;position:absolute;background-position:center 7px;background-repeat:no-repeat;text-indent:-999em; }
-.page-template-layout_work-php .sub-header .projects-pagination a.previous { left:0;background-image:url("../images/icons/left_arrow.png"); }
-.page-template-layout_work-php .sub-header .projects-pagination a.next { right:0;background-image:url("../images/icons/right_arrow.png"); }
+.page-template-layout_work-php .sub-header .projects-pagination a.previous { left:0;background-image:url("images/icons/left_arrow.png"); }
+.page-template-layout_work-php .sub-header .projects-pagination a.next { right:0;background-image:url("images/icons/right_arrow.png"); }
 .page-template-layout_work-php .sub-header .projects-pagination a.end { filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);opacity:0.5; }
 .page-template-layout_work-php .sub-header .projects-pagination p { text-align:center;line-height:26px; }
 .page-template-layout_work-php .project-highlights { background:#cdcdcd; }
@@ -16,8 +16,8 @@
 .page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation { padding:10px; }
 .page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li { display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline; }
 .page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li a { width:18px;height:18px;display:block;background-position:0 0;background-repeat:no-repeat;text-indent:-999em; }
-.page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li a { background-image:url("../images/icons/highlight_slide_marker.png"); }
-.page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li a.selected { background-image:url("../images/icons/highlight_slide_marker_selected.png"); }
+.page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li a { background-image:url("images/icons/highlight_slide_marker.png"); }
+.page-template-layout_work-php .project-highlights .highlights-slideshow ul.navigation li a.selected { background-image:url("images/icons/highlight_slide_marker_selected.png"); }
 .page-template-layout_work-php .project-details { overflow:hidden; }
 .page-template-layout_work-php .project-details .text-content { float:left;width:575px; }
 .page-template-layout_work-php .project-details dl.overview { float:right;width:315px; }

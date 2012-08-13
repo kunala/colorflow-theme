@@ -100,7 +100,7 @@
         echo $source;
         break;
       case 'genre':
-        $genre = get_the_term_list( $post->ID, 'genre', '', ', ', '');
+        $genre = get_the_terms( $post->ID, 'genre');
         echo $genre;
         break;
     }

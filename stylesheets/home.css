@@ -2,7 +2,7 @@
 #home.page #header .navigation nav.main-navigation { float:left;margin-top:0; }
 #home.page #header .navigation nav.social-navigation { float:right; }
 #home.page #header .navigation { height:29px; }
-#home.page #wrapper { background:#0f1012 url("../images/bg.jpg") center top no-repeat; }
+#home.page #wrapper { background:#0f1012 url("images/bg.jpg") center top no-repeat; }
 #home.page #feature-slides { position:relative;min-width:960px; }
 #home.page #feature-slides ol.slide-images { -webkit-transition:height 0.5s ease-in-out;-moz-transition:height 0.5s ease-in-out;-o-transition:height 0.5s ease-in-out;transition:height 0.5s ease-in-out;position:relative;height:220px; }
 #home.page #feature-slides ol.slide-images li.slide { -webkit-transition:opacity 0.5s ease-in-out;-moz-transition:opacity 0.5s ease-in-out;-o-transition:opacity 0.5s ease-in-out;transition:opacity 0.5s ease-in-out;background:top center no-repeat;position:absolute;text-indent:-999em;top:0;right:0;bottom:0;left:0; }
@@ -61,28 +61,28 @@
 #home.page #content .cta-columns .col.services li,
 #home.page #content .cta-columns .col.amenities li { padding-left:40px;font-size:16px;line-height:36px;background:0 center no-repeat; }
 #home.page #content .cta-columns .col.services li.grading,
-#home.page #content .cta-columns .col.amenities li.grading { background-image:url("../images/icons/services_grading.png"); }
+#home.page #content .cta-columns .col.amenities li.grading { background-image:url("images/icons/services_grading.png"); }
 #home.page #content .cta-columns .col.services li.hd,
-#home.page #content .cta-columns .col.amenities li.hd { background-image:url("../images/icons/services_hd.png"); }
+#home.page #content .cta-columns .col.amenities li.hd { background-image:url("images/icons/services_hd.png"); }
 #home.page #content .cta-columns .col.services li.archiving,
-#home.page #content .cta-columns .col.amenities li.archiving { background-image:url("../images/icons/services_archiving.png"); }
+#home.page #content .cta-columns .col.amenities li.archiving { background-image:url("images/icons/services_archiving.png"); }
 #home.page #content .cta-columns .col.services li.proxies,
-#home.page #content .cta-columns .col.amenities li.proxies { background-image:url("../images/icons/services_proxies.png"); }
+#home.page #content .cta-columns .col.amenities li.proxies { background-image:url("images/icons/services_proxies.png"); }
 #home.page #content .cta-columns .col.services li.red,
-#home.page #content .cta-columns .col.amenities li.red { background-image:url("../images/icons/services_red.png"); }
+#home.page #content .cta-columns .col.amenities li.red { background-image:url("images/icons/services_red.png"); }
 #home.page #content .cta-columns .col.services li.di,
-#home.page #content .cta-columns .col.amenities li.di { background-image:url("../images/icons/amenities_di.png"); }
+#home.page #content .cta-columns .col.amenities li.di { background-image:url("images/icons/amenities_di.png"); }
 #home.page #content .cta-columns .col.services li.gallery,
-#home.page #content .cta-columns .col.amenities li.gallery { background-image:url("../images/icons/amenities_gallery.png"); }
+#home.page #content .cta-columns .col.amenities li.gallery { background-image:url("images/icons/amenities_gallery.png"); }
 #home.page #content .cta-columns .col.services li.parking,
-#home.page #content .cta-columns .col.amenities li.parking { background-image:url("../images/icons/amenities_parking.png"); }
+#home.page #content .cta-columns .col.amenities li.parking { background-image:url("images/icons/amenities_parking.png"); }
 #home.page #content .cta-columns .col.services li.gourmet,
-#home.page #content .cta-columns .col.amenities li.gourmet { background-image:url("../images/icons/amenities_gourmet.png"); }
+#home.page #content .cta-columns .col.amenities li.gourmet { background-image:url("images/icons/amenities_gourmet.png"); }
 #home.page #content .cta-columns .col.services li.transportation,
-#home.page #content .cta-columns .col.amenities li.transportation { background-image:url("../images/icons/amenities_transportation.png"); }
+#home.page #content .cta-columns .col.amenities li.transportation { background-image:url("images/icons/amenities_transportation.png"); }
 #home.page #content .cta-columns .col.services a.more,
 #home.page #content .cta-columns .col.amenities a.more { display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;-webkit-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;-moz-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;background-color:rgba(0,0,0,0.2);padding:7px 20px;margin-bottom:1px;color:#fff;text-transform:uppercase;font-size:12px;font-weight:500; }
-#home.page #content .cta-columns .col.location .inner { background:url("../images/map.png") 0 0 no-repeat;height:300px;padding-left:110px;padding-top:5px; }
+#home.page #content .cta-columns .col.location .inner { background:url("images/map.png") 0 0 no-repeat;height:300px;padding-left:110px;padding-top:5px; }
 #home.page #content .cta-columns .col.location .inner h4,
 #home.page #content .cta-columns .col.location .inner p { font-size:14px;line-height:1.4em; }
 #home.page #content .cta-columns .col.location .inner h4 { color:#ffffff;font-weight:700; }

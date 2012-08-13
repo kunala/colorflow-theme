@@ -18,12 +18,12 @@ get_header();
         <span class='section'><?php the_title(); ?></span>
       </h2>
       <ul class='filter'>
-        <li><a class="all selected" href="#">All</a></li>
+        <li><a class="selected" href="#" rel="all">All</a></li>
         <?php 
         $filters = get_terms( "genre", $args );
         if($filters) {
           foreach ($filters as $filter ) { ?>
-            <li><a href="#" class="<?php echo $filter->slug; ?>"><?php echo $filter->name; ?></a></li>
+            <li><a href="#" rel="<?php echo $filter->slug; ?>"><?php echo $filter->name; ?></a></li>
           <?php } 
         } ?>
       </ul>
@@ -40,40 +40,25 @@ get_header();
         $image_url = gallery_first_image($post->ID);
         // $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
         $custom_fields = get_post_custom();
+        $p_genres =     get_the_terms( $custom->ID, 'Genre');
+        $p_sources =    get_the_terms( $custom->ID, 'Source');
+        $p_colorists =  get_the_terms( $custom->ID, 'person');
+        $p_services =   get_the_terms( $custom->ID, 'service');
         $p_year = $custom_fields['year_completed'][0];
         $p_director = $custom_fields["director"][0];
         $p_producer = $custom_fields["producer"][0];
-        $p_ographer = $custom_fields["ographer"][0];
-        $p_genre = get_the_term_list( $post->ID, 'genre', '', ', ', '');
-        $p_source = get_the_term_list( $post->ID, 'source', '', ', ', '');
-        $p_services = get_the_terms( $post->ID, 'service' );
-        // $p_colorists = get_the_terms( $post->ID, 'person' );
-        $p_colorists = get_the_term_list( $post->ID, 'person', '', ', ', '');
-        ?>
-        <li class='cell'>
-          <div class='image'>
-            <img src="<?php echo $image_url; ?>"/>
-          </div>
+        $p_ographer = $custom_fields["ographer"][0]; ?>
+        <li class='cell <?php foreach ( $p_genres as $p_genre ) { echo $p_genre->slug.' '; }  ?>'>
+          <div class='image'><img src="<?php echo $image_url; ?>"/></div>
           <div class='details'>
-            <h3>
-              <a href="<?php echo get_permalink() ?>"><?php the_title(); ?></a></h3>
+            <h3><a href="<?php echo get_permalink() ?>"><?php the_title(); ?></a></h3>      
             <dl>
-              <?php if($p_genre): ?>
-              <dt><?php echo $p_genre; ?></dt>
-              <?php else: ?>
-              <dt>Year:</dt>
-              <?php endif; ?>
-              <dd><?php if($p_year) { echo $p_year; } ?></dd>
-              
-              <?php if($p_colorists): ?>
+              <dt><?php foreach ( $p_genres as $p_genre ) { echo $p_genre->name; } ?></dt>
+              <dd><?php echo $p_year; ?></dd>
               <dt>Colorist</dt>
-              <dd> <?php $p_colorists;  ?></dd>
-              <?php endif; ?>
-              
-              <?php if($p_source): ?>
+              <dd><?php foreach ( $p_colorists as $p_colorist ) { echo $p_colorist->name; }?></dd>
               <dt>Source</dt>
-              <dd><?php $p_source ?></dd>
-              <?php endif; ?>
+              <dd><?php foreach ($p_sources as $p_source) { echo $p_source->name; } ?></dd>
             </dl>
           </div>
         </li>

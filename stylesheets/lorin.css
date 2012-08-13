@@ -67,7 +67,7 @@ body {
 
 /* line 13, styles.css.scss */
 #wrapper {
-  background: #1b1c1e url("../images/bg_lightened.jpg") center top no-repeat; }
+  background: #1b1c1e url("images/bg_lightened.jpg") center top no-repeat; }
 
 /* line 15, styles.css.scss */
 a {
@@ -105,7 +105,7 @@ body#home #header {
     width: 216px;
     height: 51px;
     display: block;
-    background: url("../images/logo_small.png");
+    background: url("images/logo_small.png");
     text-indent: -999em; }
   /* line 37, _layout.scss */
   #header .navigation h1.logo {
@@ -153,7 +153,7 @@ body#home #header {
       *display: inline;
       width: 24px;
       height: 24px;
-      background-image: url("../images/home.png");
+      background-image: url("images/home.png");
       background-position: center 4px;
       margin-top: 3px;
       background-repeat: no-repeat;
@@ -193,13 +193,13 @@ body#home #header {
     background-repeat: no-repeat; }
     /* line 100, _layout.scss */
     #header .navigation nav.social-navigation a.vimeo {
-      background-image: url("../images/icons/nav_vimeo.png"); }
+      background-image: url("images/icons/nav_vimeo.png"); }
     /* line 101, _layout.scss */
     #header .navigation nav.social-navigation a.twitter {
-      background-image: url("../images/icons/nav_twitter.png"); }
+      background-image: url("images/icons/nav_twitter.png"); }
     /* line 102, _layout.scss */
     #header .navigation nav.social-navigation a.facebook {
-      background-image: url("../images/icons/nav_facebook.png"); }
+      background-image: url("images/icons/nav_facebook.png"); }
 /* line 107, _layout.scss */
 #header header.main-header {
   margin-top: 100px;
@@ -208,7 +208,7 @@ body#home #header {
   #header header.main-header h1 {
     width: 268px;
     height: 48px;
-    background: url("../images/logo.png") 0 0 no-repeat;
+    background: url("images/logo.png") 0 0 no-repeat;
     text-indent: -999em;
     margin-bottom: 20px; }
   /* line 118, _layout.scss */
@@ -445,7 +445,7 @@ body.two-column #content {
 
 /* line 3, _home.scss */
 body#home #wrapper {
-  background: #0f1012 url("../images/bg.jpg") center top no-repeat; }
+  background: #0f1012 url("images/bg.jpg") center top no-repeat; }
 /* line 7, _home.scss */
 body#home #feature-slides {
   position: relative;
@@ -678,34 +678,34 @@ body#home #content {
         background: 0 center no-repeat; }
         /* line 184, _home.scss */
         body#home #content .cta-columns .col.services li.grading, body#home #content .cta-columns .col.amenities li.grading {
-          background-image: url("../images/icons/services_grading.png"); }
+          background-image: url("images/icons/services_grading.png"); }
         /* line 185, _home.scss */
         body#home #content .cta-columns .col.services li.hd, body#home #content .cta-columns .col.amenities li.hd {
-          background-image: url("../images/icons/services_hd.png"); }
+          background-image: url("images/icons/services_hd.png"); }
         /* line 186, _home.scss */
         body#home #content .cta-columns .col.services li.archiving, body#home #content .cta-columns .col.amenities li.archiving {
-          background-image: url("../images/icons/services_archiving.png"); }
+          background-image: url("images/icons/services_archiving.png"); }
         /* line 187, _home.scss */
         body#home #content .cta-columns .col.services li.proxies, body#home #content .cta-columns .col.amenities li.proxies {
-          background-image: url("../images/icons/services_proxies.png"); }
+          background-image: url("images/icons/services_proxies.png"); }
         /* line 188, _home.scss */
         body#home #content .cta-columns .col.services li.red, body#home #content .cta-columns .col.amenities li.red {
-          background-image: url("../images/icons/services_red.png"); }
+          background-image: url("images/icons/services_red.png"); }
         /* line 190, _home.scss */
         body#home #content .cta-columns .col.services li.di, body#home #content .cta-columns .col.amenities li.di {
-          background-image: url("../images/icons/amenities_di.png"); }
+          background-image: url("images/icons/amenities_di.png"); }
         /* line 191, _home.scss */
         body#home #content .cta-columns .col.services li.gallery, body#home #content .cta-columns .col.amenities li.gallery {
-          background-image: url("../images/icons/amenities_gallery.png"); }
+          background-image: url("images/icons/amenities_gallery.png"); }
         /* line 192, _home.scss */
         body#home #content .cta-columns .col.services li.parking, body#home #content .cta-columns .col.amenities li.parking {
-          background-image: url("../images/icons/amenities_parking.png"); }
+          background-image: url("images/icons/amenities_parking.png"); }
         /* line 193, _home.scss */
         body#home #content .cta-columns .col.services li.gourmet, body#home #content .cta-columns .col.amenities li.gourmet {
-          background-image: url("../images/icons/amenities_gourmet.png"); }
+          background-image: url("images/icons/amenities_gourmet.png"); }
         /* line 194, _home.scss */
         body#home #content .cta-columns .col.services li.transportation, body#home #content .cta-columns .col.amenities li.transportation {
-          background-image: url("../images/icons/amenities_transportation.png"); }
+          background-image: url("images/icons/amenities_transportation.png"); }
       /* line 197, _home.scss */
       body#home #content .cta-columns .col.services a.more, body#home #content .cta-columns .col.amenities a.more {
         display: -moz-inline-stack;
@@ -731,7 +731,7 @@ body#home #content {
         font-weight: 500; }
       /* line 210, _home.scss */
       body#home #content .cta-columns .col.location .inner {
-        background: url("../images/map.png") 0 0 no-repeat;
+        background: url("images/map.png") 0 0 no-repeat;
         height: 300px;
         padding-left: 110px;
         padding-top: 5px; }
@@ -945,10 +945,10 @@ body.work-page .sub-header {
       text-indent: -999em; }
       /* line 132, _work.scss */
       body.work-page .sub-header .projects-pagination .nav-previous  { width: 30px; height: 26px; position: absolute; left: 0; top: 0; }
-      body.work-page .sub-header .projects-pagination .nav-previous a { background-image: url("../images/icons/left_arrow.png"); }  
+      body.work-page .sub-header .projects-pagination .nav-previous a { background-image: url("images/icons/left_arrow.png"); }  
       /* line 133, _work.scss */
       body.work-page .sub-header .projects-pagination .nav-next { width: 30px; height: 26px; position: absolute; right: 0; top: 0; }
-      body.work-page .sub-header .projects-pagination .nav-next a { background-image: url("../images/icons/right_arrow.png"); }
+      body.work-page .sub-header .projects-pagination .nav-next a { background-image: url("images/icons/right_arrow.png"); }
       /* line 134, _work.scss */
       body.work-page .sub-header .projects-pagination a.end {
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
@@ -992,10 +992,10 @@ body.work-page .project-highlights {
           text-indent: -999em; }
           /* line 170, _work.scss */
           body.work-page .project-highlights .highlights-slideshow ul.navigation li a {
-            background-image: url("../images/icons/highlight_slide_marker.png"); }
+            background-image: url("images/icons/highlight_slide_marker.png"); }
           /* line 171, _work.scss */
           body.work-page .project-highlights .highlights-slideshow ul.navigation li a.selected {
-            background-image: url("../images/icons/highlight_slide_marker_selected.png"); }
+            background-image: url("images/icons/highlight_slide_marker_selected.png"); }
 /* line 178, _work.scss */
 body.work-page .project-details {
   overflow: hidden; }

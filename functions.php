@@ -120,3 +120,16 @@ function admin_css() {
 }
 add_action('admin_print_styles', 'admin_css' );
 
+if( class_exists( 'kdMultipleFeaturedImages' ) ) {
+  $args = array(
+    'id' => 'homepage-image',
+    'post_type' => 'project',      // Set this to post or page
+    'labels' => array(
+    'name'      => 'Homepage Image',
+    'set'       => 'Set homepage image',
+    'remove'    => 'Remove homepage image',
+    'use'       => 'Use as homepage image',
+  )
+);
+new kdMultipleFeaturedImages( $args );
+}

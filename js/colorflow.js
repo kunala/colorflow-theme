@@ -46,4 +46,16 @@ jQuery(document).ready(function(){
        jQuery(this).addClass('current');
      }
   });
+  jQuery('ul.filter li a').bind('click', function(e){
+    e.preventDevault;
+    activeGenre = jQuery(this).attr('rel');
+    jQuery('ul.filter li a').removeClass('selected');
+    jQuery(this).addClass('selected');
+    if(activeGenre == 'all')
+      jQuery('ul.grid li').show();
+    else
+      jQuery('ul.grid li').hasClass(activeGenre).fadeOut();
+  });
+    
+  
 });

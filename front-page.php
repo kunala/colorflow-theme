@@ -1,8 +1,8 @@
 <?php get_header('home'); ?>
 <?php 
   $feature_query = array('numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
-  $service_query = array('numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'service','post_status'=> 'publish');
-  $amenity_query = array('numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'amenity','post_status'=> 'publish'); 
+  $service_query = array('posts_per_page'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'service','post_status'=> 'publish');
+  $amenity_query = array('numberposts'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'amenity','post_status'=> 'publish'); 
   $features = new WP_Query($feature_query);
   $amenities = new WP_Query($amenity_query);
   $services = new WP_Query($service_query);
@@ -14,20 +14,26 @@
     <ol class='slide-images'>
     <?php 
     while ( $features->have_posts() ) : $features->the_post(); 
-      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original');
+      $image_url = kd_mfi_get_featured_image_url('homepage-image', 'project', 'full');
+      # $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original');
+      if($image_url) {
       ?>
-      <li class='slide' data-slide='<?php echo $i ?>' style='background-image: url(<?php echo $image_url[0]; ?>);'>
+      <li class='slide' data-slide='<?php echo $i ?>' style='background-image: url(<?php echo $image_url; ?>);'>
         <?php echo get_the_title(); ?> 
       </li>
       <?php $i = $i + 1; ?>
+      <?php } ?>
     <?php endwhile; $i = 1 ?>
     </ol>
     <!-- Slide Tabs -->
     <ol class='slide-tabs'>
     <?php 
     while ( $features->have_posts() ) : $features->the_post(); ?>
+      <?php $image_url = kd_mfi_get_featured_image_url('homepage-image', 'project', 'full'); ?>
+      <?php if($image_url) { ?>
       <li class='slide slide-<?php echo $i; ?>' data-slide='<?php echo $i ?>'><a href="#">Tab <?php echo $i; ?></a></li>
       <?php $i = $i + 1; ?>
+      <?php } ?>
     <?php endwhile; $i = 1 ?>
     </ol>
   </div>
@@ -41,9 +47,12 @@
       $p_director = $custom_fields["director"][0];
       $p_producer = $custom_fields["producer"][0];
       $p_ographer = $custom_fields["ographer"][0];
-      $p_genre = get_the_term_list( $post->ID, 'genre', '', ', ', '');
-      $p_services = get_the_terms( $post->ID, 'service' );
-      $p_colorists = get_the_terms( $post->ID, 'person' ); ?>
+      $p_genre =      get_the_terms( $post->ID, 'genre');
+      $p_services =   get_the_terms( $post->ID, 'service' );
+      $p_colorists =  get_the_terms( $post->ID, 'person' ); 
+      ?>
+      <?php $image_url = kd_mfi_get_featured_image_url('homepage-image', 'project', 'full'); ?>
+      <?php if($image_url) { ?>
       <li class='slide' data-slide='<?php echo $i ?>'>
         <h2>
           <?php echo get_the_title(); ?> 
@@ -84,6 +93,7 @@
         </div>
       </li>
       <?php $i = $i + 1; ?>
+      <?php } ?>
       <?php endwhile; $i = 1 ?>
       <!-- Slide 1 -->
     </ol>
@@ -99,7 +109,7 @@
           <h2>Services</h2>
           <ul class='cta-list'>
             <?php while ( $services->have_posts() ) : $services->the_post();  ?>
-            <li><?php echo get_the_title(); ?></li>
+            <li class="<?php echo $post->post_name; ?>"><?php echo get_the_title(); ?></li>
             <?php endwhile; ?>
           </ul>
           <a class='more' href='services'>View All Services</a>
@@ -111,7 +121,7 @@
           <h2>Amenities</h2>
           <ul class='cta-list'>
             <?php while ( $amenities->have_posts() ) : $amenities->the_post();  ?>
-            <li><?php echo get_the_title(); ?></li>
+            <li class="<?php echo $post->post_name; ?>"><?php echo get_the_title(); ?></li>
             <?php endwhile; ?>
           </ul>
           <a class='more' href='amenities'>See The Facility</a>
