@@ -26,6 +26,7 @@ get_header();?>
       <ul class="talent_list">
         <?php 
         while ( $custom->have_posts() ) : $custom->the_post(); 
+        $custom_fields = get_post_custom();
         $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail');
         ?>
         <li>
@@ -33,7 +34,8 @@ get_header();?>
             <?php echo get_the_post_thumbnail( $post_id, 'thumbnail'); ?>
           </div>
           <div class="bio">
-            <h3><?php the_title(); ?></h3>
+            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <h2><?php echo $custom_fields['job_title'][0]; ?></h2>
             <?php the_content(); ?>
           </div>
         </li>

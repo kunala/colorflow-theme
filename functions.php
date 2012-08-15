@@ -29,7 +29,7 @@ function turing_setup() {
 	/*** Custom template tags for this theme. */
 	require( get_template_directory() . '/inc/template-tags.php' );
 	/*** Custom functions that act independently of the theme templates */
-	//require( get_template_directory() . '/inc/tweaks.php' );
+	require( get_template_directory() . '/inc/tweaks.php' );
 	/*** Custom Theme Options */
 	require( get_template_directory() . '/inc/theme-options/theme-options.php' );
 	/*** Custom User Fields */
@@ -82,6 +82,7 @@ function turing_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/libraries/modernizr.js', array( 'jquery' ), '20120206', false );
   wp_enqueue_script( 'colorflow', get_template_directory_uri() . '/js/colorflow.js', array( 'jquery' ), '20120206', true );
+  wp_enqueue_script( 'quicksand', get_template_directory_uri() . '/js/libraries/quicksand.js', array( 'jquery' ), '20120206', true );
   // if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
   //  wp_enqueue_script( 'comment-reply' );
   // }

@@ -31,6 +31,16 @@ get_header(); ?>
   		<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
   		<?php get_template_part( 'no-results', 'index' ); ?>
   		<?php endif; ?>
+  		<div class="posts_navigation">
+  		  <div class="older">
+  		    <?php next_posts_link('Older Posts') ?>
+  		    <?php # posts_nav_link(' ', ' ', 'Older Posts'); ?>
+  		  </div>
+  		  <div class="newer">
+  		    <?php previous_posts_link('Newer Posts') ?>
+  		    <?php # posts_nav_link(' ', 'Newer Posts', ' '); ?>
+  		  </div>
+  		</div>
 		</div><!-- #primary .site-content -->
 		<?php get_sidebar(); ?>
 	</div><!-- #content -->

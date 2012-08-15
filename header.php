@@ -24,7 +24,7 @@
 </title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<script src='http://use.typekit.com/nxy6drw.js'> </script>
+<script type='text/javascript' src='http://use.typekit.com/nxy6drw.js'> </script>
 <script type='text/javascript'>
   //<![CDATA[
     try{Typekit.load();}catch(e){}

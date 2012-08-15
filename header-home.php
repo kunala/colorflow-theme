@@ -57,8 +57,8 @@
           <!-- ====================================================================== -->
           <nav class='social-navigation'>
             <span class='heading'>we love you too:</span>
-            <ul>
-              <li><a class="vimeo" href="#">Vimeo</a></li>
+            <ul class="social_icons">
+              <li><a class="vimeo" href="https://vimeo.com/colorflow">Vimeo</a></li>
               <li><a class="twitter" href="https://twitter.com/colorflowpost">Twitter</a></li>
               <li><a class="facebook" href="http://www.facebook.com/colorflowpost">Facebook</a></li>
             </ul>

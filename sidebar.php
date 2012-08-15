@@ -13,21 +13,22 @@
 		-->
 		
 		<div id="secondary" class="widget-area" role="complementary">
-			<?php $b_options = turing_get_theme_options(); ?>
-
 			<?php do_action( 'before_sidebar' ); ?>
 			
-			<aside id="text-2" class="widget widget_text">			
-        <div class="inner">
-          <div class="subsection location">
-            <h4>Zaentz Media Center</h4>
+			<aside id="text-2" class="widget location">			
+        <div class='inner'>
+          <div class="subsection">
+            <?php $t_options = turing_get_theme_options(); ?>
+            <h4><?php echo $t_options['company_address_1']; ?></h4>
             <p>
-              2600 10 Street <br>
-              Suite 4B <br>
-              Berkeley, CA 94710
+              <?php echo $t_options['company_address_2']; ?>
+              <br/>
+              <?php echo $t_options['company_address_2b']; ?>
+              <br/>
+              <?php echo $t_options['company_address_3']; ?>
             </p>
           </div>
-          <a class="contact-button" href="#">Contact Us</a>
+          <a class="contact-button" href="/contact">Contact Us</a>
         </div>
 		  </aside>
 			

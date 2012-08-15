@@ -9,21 +9,22 @@ $pageID = " ";
 get_header();
 ?>
 <?php 
-  $custom_query = array('numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
-  $custom = new WP_Query($custom_query);
+  $projects_query = array('numberposts'=> -1,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
+  $projects = new WP_Query($projects_query);
 ?>
  <div id='content'>
     <div id='primary'>
       <h2 class='page-heading'>
-        <span class='section'><?php the_title(); ?></span>
+        <span class='section'><?php the_title(); ?> /</span>
+        <span id="filter_title">All</span>
       </h2>
-      <ul class='filter'>
-        <li><a class="selected" href="#" rel="all">All</a></li>
+      <ul id="filterOptions">
+        <li class="active"><a href="#" class="all">All</a></li>
         <?php 
         $filters = get_terms( "genre", $args );
         if($filters) {
           foreach ($filters as $filter ) { ?>
-            <li><a href="#" rel="<?php echo $filter->slug; ?>"><?php echo $filter->name; ?></a></li>
+            <li class=""><a href="#" class="<?php echo $filter->slug; ?>"><?php echo $filter->name; ?></a></li>
           <?php } 
         } ?>
       </ul>
@@ -36,32 +37,57 @@ get_header();
       </div>
       <ul class='grid'>
         <?php 
-        while ( $custom->have_posts() ) : $custom->the_post(); 
+          global $i; 
+          $i = 1;
+        ?>
+        <?php 
+        while ( $projects->have_posts() ) : $projects->the_post(); 
+        global $i;
+        $custom_fields = get_post_custom();
         $image_url = gallery_first_image($post->ID);
         // $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
         $custom_fields = get_post_custom();
-        $p_genres =     get_the_terms( $custom->ID, 'Genre');
-        $p_sources =    get_the_terms( $custom->ID, 'Source');
-        $p_colorists =  get_the_terms( $custom->ID, 'person');
-        $p_services =   get_the_terms( $custom->ID, 'service');
+        $p_genres =     get_the_terms( $post->ID, 'Genre'); // is_wp_error works
+        $p_sources =    get_the_terms( $post->ID, 'Source'); // is_wp_error works
+        $p_colorists =  get_the_terms( $post->ID, 'person'); // is_wp_error DONT WORK!
+        // $p_colorists =  get_the_terms( $post->ID, 'person');
+        $p_services =   get_the_terms( $post->ID, 'service');
         $p_year = $custom_fields['year_completed'][0];
         $p_director = $custom_fields["director"][0];
         $p_producer = $custom_fields["producer"][0];
-        $p_ographer = $custom_fields["ographer"][0]; ?>
-        <li class='cell <?php foreach ( $p_genres as $p_genre ) { echo $p_genre->slug.' '; }  ?>'>
+        $p_ographer = $custom_fields["ographer"][0]; 
+        ?>
+        <li class='item' data-type='<?php foreach ( $p_genres as $p_genre ) { echo $p_genre->slug; }  ?>' data-id="id-<?php echo $i; ?>">
           <div class='image'><img src="<?php echo $image_url; ?>"/></div>
           <div class='details'>
             <h3><a href="<?php echo get_permalink() ?>"><?php the_title(); ?></a></h3>      
             <dl>
+              <?php if (is_wp_error( $p_genres )) { ?>
+              <dt>Year</dt>
+              <?php } else { ?>
               <dt><?php foreach ( $p_genres as $p_genre ) { echo $p_genre->name; } ?></dt>
+              <?php } ?>
+              
+              <?php if (is_wp_error($p_year)) { ?>
+              <dd>&nbsp;</dd>
+              <?php } else { ?>
               <dd><?php echo $p_year; ?></dd>
+              <?php } ?>
+              
               <dt>Colorist</dt>
-              <dd><?php foreach ( $p_colorists as $p_colorist ) { echo $p_colorist->name; }?></dd>
+              <dd><?php foreach ($p_colorists as $p_colorist) { echo $p_colorist->name; } ?></dd>
+              
+              <?php if (is_wp_error($p_sources)) { ?>
+              <dt>&nbsp;</dt>
+              <dd>&nbsp;</dd>
+              <?php } else { ?>
               <dt>Source</dt>
               <dd><?php foreach ($p_sources as $p_source) { echo $p_source->name; } ?></dd>
+              <?php } ?>
             </dl>
           </div>
         </li>
+        <?php $i = $i + 1;  ?>
         <?php endwhile; ?>
     </div>
   </div>

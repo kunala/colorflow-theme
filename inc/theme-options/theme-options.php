@@ -38,6 +38,7 @@ function turing_theme_options_init() {
 	add_settings_field( 'company_phone',      __( 'Contact Phone Number', 'turing' ), 'company_phone',      'theme_options', 'general' );
 	add_settings_field( 'company_address_1',  __( 'Company Address 1', 'turing' ),    'company_address_1',  'theme_options', 'general' );
 	add_settings_field( 'company_address_2',  __( 'Company Address 2', 'turing' ),    'company_address_2',  'theme_options', 'general' );
+	add_settings_field( 'company_address_2b',  __( 'Company Address 2b', 'turing' ),  'company_address_2b', 'theme_options', 'general' );
 	add_settings_field( 'company_address_3',  __( 'Company Address 3', 'turing' ),    'company_address_3',  'theme_options', 'general' );
 	add_settings_field( 'company_bio',        __( 'Company Bio', 'turing' ),          'company_bio',        'theme_options', 'general' );
 }
@@ -73,6 +74,7 @@ function turing_get_theme_options() {
 		'company_phone'       => '888 603 6023',
     'company_address_1'   => 'Zaentz Media Center',
     'company_address_2'   => '2600 10th Street',
+    'company_address_2b'  => 'Suite 4',
     'company_address_3'   => 'Berkeley, CA 94710',
     'company_bio'         => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit nunc non tellus venenatis non cursus justo rutrum. Sed semper, ligula pretium luctus venenatis, mauris risus bibendum eros, eu ullamcorper tellus odio quis diam. Fusce vitae nisi id lorem tempus placerat. Maecenas rutrum consectetur orci at tempus. Donec bibendum auctor massa, ac fringilla justo congue a. Quisque fermentum pretium nisl, ultricies vestibulum mauris rutrum at.'
 	);
@@ -110,6 +112,13 @@ function company_address_2() {
 	$options = turing_get_theme_options();
 	?>
 	<input type="text" name="turing_theme_options[company_address_2]" id="company_address_1" value="<?php echo esc_attr( $options['company_address_2'] ); ?>" />
+  <!-- <label class="description" for="company_address_2"><?php _e( 'Company Phone Address', 'turing' ); ?></label> -->
+	<?php
+}
+function company_address_2b() {
+	$options = turing_get_theme_options();
+	?>
+	<input type="text" name="turing_theme_options[company_address_2b]" id="company_address_1" value="<?php echo esc_attr( $options['company_address_2b'] ); ?>" />
   <!-- <label class="description" for="company_address_2"><?php _e( 'Company Phone Address', 'turing' ); ?></label> -->
 	<?php
 }

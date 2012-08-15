@@ -30,7 +30,14 @@
       </ul>
     </nav>
     <!-- <p class="copyright">Copyright 2012 Colorflow Post, Inc.</p> -->
-    <p class="copyright">© <?php echo date("Y"); echo '&nbsp;'.$t_options['company_name']; ?>. All Rights Reserved.</p>
+    <p class="copyright">
+      © <?php echo date("Y"); echo '&nbsp;'.$t_options['company_name']; ?>. All Rights Reserved.
+      <span class="social_icons">
+        <a class="vimeo" href="https://vimeo.com/colorflow">Vimeo</a>
+        <a class="twitter" href="https://twitter.com/colorflowpost">Twitter</a>
+        <a class="facebook" href="http://www.facebook.com/colorflowpost">Facebook</a>
+      </span>
+    </p>
   </div>
 </div>
 

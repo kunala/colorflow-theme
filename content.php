@@ -25,8 +25,8 @@ global $pageID;
       else {
         the_excerpt(); ?>
         <p>
-          <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'turing' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-  		      Continue reading...
+          <a class="read_more" href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'turing' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+  		      Continue reading
   		    </a>
   		  </p>
       <?php } ?>

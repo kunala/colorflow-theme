@@ -18,9 +18,6 @@ get_header(); ?>
 
         <div class='projects-pagination'>
           <?php turing_content_nav( 'nav-above' ); ?>
-          <!-- <a class="previous end" href="#"><</a>
-          <a class="next" href="#">></a>
-          <p>Project 1 of 9</p> -->
         </div>
       </div>
       <?php
@@ -41,7 +38,6 @@ get_header(); ?>
       ?>
       <div class='project-details'>
         <div class='text-content'>
-          <h3>Not sure what this top paragraph will be in terms of project content. ColorFlow post is the best equipped and technoligically advanced post-production and finishing studio in Norther California. Situated in the center of filmmaking and animation, it gets a ton of cool stuff happening.</h3>
           <?php the_content(); ?>
         </div>
         <dl class='overview'>
@@ -54,17 +50,28 @@ get_header(); ?>
           $p_year = $custom_fields['year_completed'][0];
           $p_director = $custom_fields["director"][0];
           $p_producer = $custom_fields["producer"][0];
-          $p_ographer = $custom_fields["ographer"][0]; ?>
+          $p_ographer = $custom_fields["ographer"][0]; 
+          ?>
+          <?php if ($p_services) { ?>
           <dt class='services'>Services</dt>
-          <dd class='services'><?php foreach ( $p_services as $p_service ) { echo $p_service->name.', '; }?></dd>
+          <dd class='services'><?php foreach ( $p_services as $p_service ) { echo $p_service->name.', '; } ?></dd>
+          <?php } ?>
+          <?php if ($p_colorists) { ?>
           <dt class='colorist'>Colorist</dt>
-          <dd class='colorist'><?php foreach ( $p_colorists as $p_colorist ) { echo $p_colorist->name; }?></dd>
+          <dd class='colorist'><?php foreach ( $p_colorists as $p_colorist ) { echo $p_colorist->name; } ?></dd>
+          <?php } ?>
+          <?php if ($p_sources) { ?>
           <dt class='source'>Source</dt>
-          <dd class='source'><?php foreach ( $p_sources as $p_source ) { echo $p_source->name; }?></dd>
+          <dd class='source'><?php foreach ( $p_sources as $p_source ) { echo $p_source->name; } ?></dd>
+          <?php } ?>
+          <?php if ($p_director) { ?>
           <dt class='director'>Director</dt>
           <dd class='director'><?php echo $p_director; ?></dd>
+          <?php } ?>
+          <?php if ($p_ographer) { ?>
           <dt class='cinematographer'>Cinematographer</dt>
-          <dd class='cinematographer'><?php echo $p_ographer ?></dd>
+          <dd class='cinematographer'><?php echo $p_ographer; ?></dd>
+          <?php } ?>
         </dl>
       </div>
       <?php endwhile; ?>

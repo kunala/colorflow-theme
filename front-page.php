@@ -1,8 +1,8 @@
 <?php get_header('home'); ?>
 <?php 
   $feature_query = array('numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
-  $service_query = array('posts_per_page'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'service','post_status'=> 'publish');
-  $amenity_query = array('numberposts'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'amenity','post_status'=> 'publish'); 
+  $service_query = array('posts_per_page'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'ASC','post_type'=> 'service','post_status'=> 'publish');
+  $amenity_query = array('numberposts'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'ASC','post_type'=> 'amenity','post_status'=> 'publish'); 
   $features = new WP_Query($feature_query);
   $amenities = new WP_Query($amenity_query);
   $services = new WP_Query($service_query);
@@ -75,10 +75,11 @@
           </div>
           <?php endif; ?>
           
-          <div class='col'>
+          <!-- <div class='col'>
             <h3 class='title'>Cinematographer</h3>
             <div class='details'><?php echo $p_ographer ?></div>
-          </div>
+          </div> -->
+
           <?php if ($p_services) : ?>
           <div class='col'>
             <h3 class='title'>Services</h3>
@@ -135,6 +136,8 @@
             <?php echo $t_options['company_address_1']; ?>
             <br/>
             <?php echo $t_options['company_address_2']; ?>
+            <br/>
+            <?php echo $t_options['company_address_2b']; ?>
             <br/>
             <?php echo $t_options['company_address_3']; ?>
           </p>
