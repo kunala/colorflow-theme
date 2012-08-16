@@ -9,7 +9,7 @@ $pageID = " ";
 get_header();
 ?>
 <?php 
-  $projects_query = array('numberposts'=> -1,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
+  $projects_query = array('posts_per_page'=>-1,'numberposts'=>0,'offset'=>0,'orderby'=>'post_date','order'=>'DESC','post_type'=>'project','post_status'=>'publish'); 
   $projects = new WP_Query($projects_query);
 ?>
  <div id='content'>

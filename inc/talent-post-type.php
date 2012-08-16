@@ -39,14 +39,14 @@
     $custom = get_post_custom($post->ID);
     $job_title = $custom["job_title"][0];
     $imdb = $custom["imdb"][0];
-    $twitter = $custom["twitter"][0];
+    $linkedin = $custom["linkedin"][0];
     ?>
     <p><label>Job Title:</label><br />
     <input type="text" name="job_title" value="<?php echo $job_title; ?>" /></p>
     <p><label>IMDB Link:</label><br />
     <input type="text" name="imdb" value="<?php echo $imdb; ?>"/></p>
-    <p><label>twitter URL:</label><br />
-    <input type="text" name="twitter" value="<?php echo $twitter; ?>"/></p>
+    <p><label>linkedin URL:</label><br />
+    <input type="text" name="linkedin" value="<?php echo $linkedin; ?>"/></p>
     <?php
   }
   add_action('save_post', 'save_stuffs');
@@ -54,7 +54,7 @@
     global $post;
     update_post_meta($post->ID, "job_title", $_POST["job_title"]);
     update_post_meta($post->ID, "imdb", $_POST["imdb"]);
-    update_post_meta($post->ID, "twitter", $_POST["twitter"]);
+    update_post_meta($post->ID, "linkedin", $_POST["linkedin"]);
   }
 
   

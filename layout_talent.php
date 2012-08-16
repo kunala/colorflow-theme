@@ -8,7 +8,7 @@ $pageClass = "two-column";
 $pageID = "talent";
 get_header();?>
 <?php 
-  $custom_query = array('numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'person','post_status'=> 'publish'); 
+  $custom_query = array('posts_per_page'=>-1,'numberposts'=>0,'offset'=>0,'orderby'=>'post_date','order'=>'DESC','post_type'=>'person','post_status'=>'publish'); 
   $custom = new WP_Query($custom_query);
 ?>
   <div id='content'>
@@ -29,14 +29,14 @@ get_header();?>
         $custom_fields = get_post_custom();
         $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail');
         ?>
-        <li>
+        <li class="person">
           <div class="headshot">
             <?php echo get_the_post_thumbnail( $post_id, 'thumbnail'); ?>
           </div>
           <div class="bio">
-            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-            <h2><?php echo $custom_fields['job_title'][0]; ?></h2>
-            <?php the_content(); ?>
+            <h3><?php the_title(); ?></a></h3>
+            <h4><?php echo $custom_fields['job_title'][0]; ?></h4>
+            <a class="button" href="<?php the_permalink(); ?>">Bio &amp; Credits</a>
           </div>
         </li>
         <?php endwhile; ?>

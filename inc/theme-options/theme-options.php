@@ -69,6 +69,7 @@ add_action( 'admin_menu', 'turing_theme_options_add_page' );
 function turing_get_theme_options() {
 	$saved = (array) get_option( 'turing_theme_options' );
 	$defaults = array(
+		'company_twitter'     => 'colorflowpost',
 		'company_name'        => 'Turing',
 		'company_email'       => 'info@turing.com',
 		'company_phone'       => '888 603 6023',
@@ -87,6 +88,13 @@ function turing_get_theme_options() {
 global $turing_options;
 $turing_options = turing_get_theme_options();
 
+function company_twitter() {
+ 	$options = turing_get_theme_options();
+ 	?>
+	<input type="text" name="turing_theme_options[company_twitter]" id="company_twitter" value="<?php echo esc_attr( $options['company_twitter'] ); ?>" />
+  <!-- <label class="description" for="company_email"><?php _e( 'Company Email', 'turing' ); ?></label> -->
+ 	<?php
+}
 function company_email() {
  	$options = turing_get_theme_options();
  	?>
