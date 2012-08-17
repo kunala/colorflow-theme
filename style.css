@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v1.0.5
+Version: v1.0.6
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -65,6 +65,7 @@ body#home #header .navigation nav.social-navigation { float:right; }
 .social_icons a.vimeo { background-image:url("images/icons/nav_vimeo.png"); }
 .social_icons a.twitter { background-image:url("images/icons/nav_twitter.png"); }
 .social_icons a.facebook { background-image:url("images/icons/nav_facebook.png"); }
+.social_icons a.tumblr { background-image:url("images/icons/nav_tumblr.png"); }
 
 #footer { padding:40px 0; }
 #footer nav.footer-navigation { float:left; }
@@ -227,15 +228,22 @@ body.work-index ul#filterOptions li { margin-right:20px; }
 body.work-index ul#filterOptions li a { font-weight:300; }
 body.work-index ul#filterOptions li.active a { color:#fff;font-weight:500; }
 ul.grid { overflow:hidden;border-bottom:2px solid white;border-right:2px solid white; }
-ul.grid li.item { float:left;width:316px;border-left:2px solid white;border-top:2px solid white;position:relative;overflow:hidden;height:178px; }
+ul.grid { border: none; background: #fff; padding: 1px; }
+ul.grid li.item { float:left;width:316px;height:178px;border-left:2px solid white;border-top:2px solid white;position:relative;overflow:hidden; }
+ul.grid li.item { border: none; margin: 1px; background: rgba(0,0,0,.5); }
+ul.grid li.item a.click { display: block; width: 316px; height: 178px; position: absolute; top: 0; left: 0; z-index: 100; }
 ul.grid li.item .image { position:absolute;top:0;right:0;bottom:0;right:0; }
-ul.grid li.item .details { -webkit-transition:0.3s all ease-in-out;-moz-transition:0.3s all ease-in-out;-o-transition:0.3s all ease-in-out;transition:0.3s all ease-in-out;position:absolute;left:0;right:0; }
+ul.grid li.item .details { position:absolute;left:0;right:0; }
 ul.grid li.item .details h3 { color:#fff;background:rgba(0,0,0,0.7);padding:10px;margin-bottom:1px;font-size:16px !important; }
 ul.grid li.item .details dl { background:rgba(0,0,0,0.57);padding:10px;overflow:hidden;line-height:1.25em; }
 ul.grid li.item .details dl dt { float:left;clear:left;font-weight:300; }
 ul.grid li.item .details dl dd { padding-left:100px;color:#fff; }
 ul.grid li.item .details { top:142px; }
 body.work-index ul.grid li.item:hover .details { top:72px; }
+ul.grid { -webkit-transition:0.2s all ease-in-out;-moz-transition:0.2s all ease-in-out;-o-transition:0.2s all ease-in-out;transition:0.2s all ease-in-out; }
+ul.grid li.item .details {-webkit-transition:0.3s all ease-in-out;-moz-transition:0.3s all ease-in-out;-o-transition:0.3s all ease-in-out;transition:0.3s all ease-in-out; }
+
+
 
 body.work-page #primary { width:960px;margin:0 auto;padding-bottom:50px; }
 body.work-page .sub-header { overflow:hidden;margin-bottom:20px;padding-top:1px;padding-bottom:1px; }
@@ -331,6 +339,40 @@ body#contact .contact_form textarea { width: 100%; height: 156px; box-sizing: bo
 body#contact .contact_form input[type="submit"] { width: 100%; }
 body#contact #secondary aside.widget.location { display: none; }
 
+#comments { }
+h2.comments-title { }
+h2.comments-title span { }
+ol.commentlist { }
+li.comment { }
+li.comment article.comment { }
+li.comment footer { }
+li.comment .comment-author.vcard { }
+li.comment .comment-author.vcard cite.fn { }
+li.comment .comment-author.vcard span.says { }
+li.comment .comment-meta.commentmetadata { }
+li.comment .comment-meta.commentmetadata a { }
+li.comment .comment-meta.commentmetadata a time { }
+li.comment .comment-content { }
+li.comment .comment-content p { }
+li.comment .reply { }
+li.comment .reply a.comment-reply-link { }
+#comments #respond { }
+h3#reply-title { }
+h3#reply-title small { }
+h3#reply-title small a { }
+form#commentform { }
+form#commentform p { }
+form#commentform p label { }
+form#commentform p span.required { }
+form#commentform p input#author { }
+form#commentform p textarea#comment { }
+form#commentform p input#submit { }
+form#commentform p.comment-form-author { }
+form#commentform p.comment-form-email { }
+form#commentform p.comment-form-url { }
+form#commentform p.comment-form-comment { }
+form#commentform p.form-submit { }
+
 /*BOX SHADOWS*/
 blockquote,
 body.two-column #content #secondary .subsection.updates .inner,
@@ -361,7 +403,7 @@ body.work-page .sub-header .projects-pagination a,
 body.work-page .project-highlights .highlights-slideshow ul.navigation li,
 body.work-page .nivoSlider .nivo-controlNav a 
 { display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline; }  
-  
+
 /*BUTTON BOX-SHADOW*/
 #header .navigation nav.main-navigation a.current,
 .posts_navigation a,

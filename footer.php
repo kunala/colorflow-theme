@@ -36,6 +36,7 @@
         <a class="vimeo" href="https://vimeo.com/colorflow">Vimeo</a>
         <a class="twitter" href="https://twitter.com/colorflowpost">Twitter</a>
         <a class="facebook" href="http://www.facebook.com/colorflowpost">Facebook</a>
+        <a class="tumblr" href="http://tumblr.com">Tumblr</a>
       </span>
     </p>
   </div>

@@ -5,6 +5,7 @@ global $page;
 global $numpages;
 $pageClass = "work-page two-column";
 $pageID = "talent";
+$talentID = $post->ID;
 get_header(); ?>
   <div id='content' role="main">
     <div id='primary' class="site-content">
@@ -42,15 +43,25 @@ get_header(); ?>
         <h3>Credits</h3>
         <ul class='grid'>
           <?php 
-          $projects_query = array('posts_per_page'=>-1,'numberposts'=>0,'offset'=>0,'orderby'=>'post_date','order'=>'DESC','post_type'=>'project','post_status'=>'publish'); 
+          $projects_query = array(
+	          'tax_query'       => array(array('taxonomy' => 'person','field' => 'id','terms' => $talentID)),
+	          'posts_per_page'  => -1,
+	          'numberposts'     => 0,
+	          'offset'          => 0,
+	          'orderby'         => 'post_date',
+	          'order'           => 'DESC',
+	          'post_type'       => 'project',
+	          'post_status'     => 'publish'
+          );
           $projects = new WP_Query($projects_query);
           while ( $projects->have_posts() ) : $projects->the_post(); 
           $image_url = gallery_first_image($post->ID);
           ?>
           <li class='item'>
+            <a class="click" href="<?php echo get_permalink() ?>"> </a>
             <div class='image'><img src="<?php echo $image_url; ?>"/></div>
             <div class='details'>
-              <h3><a href="<?php echo get_permalink() ?>"><?php the_title(); ?></a></h3>      
+              <h3><?php the_title(); ?></h3>      
             </div>
           </li>
           <?php endwhile; ?>

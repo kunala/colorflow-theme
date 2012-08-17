@@ -61,6 +61,7 @@
               <li><a class="vimeo" href="https://vimeo.com/colorflow">Vimeo</a></li>
               <li><a class="twitter" href="https://twitter.com/colorflowpost">Twitter</a></li>
               <li><a class="facebook" href="http://www.facebook.com/colorflowpost">Facebook</a></li>
+              <li><a class="tumblr" href="http://tumblr.com">Tumblr</a></li>
             </ul>
           </nav>
         </div>

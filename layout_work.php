@@ -58,9 +58,10 @@ get_header();
         $p_ographer = $custom_fields["ographer"][0]; 
         ?>
         <li class='item' data-type='<?php foreach ( $p_genres as $p_genre ) { echo $p_genre->slug; }  ?>' data-id="id-<?php echo $i; ?>">
+          <a class="click" href="<?php echo get_permalink() ?>"> </a>
           <div class='image'><img src="<?php echo $image_url; ?>"/></div>
           <div class='details'>
-            <h3><a href="<?php echo get_permalink() ?>"><?php the_title(); ?></a></h3>      
+            <h3><?php the_title(); ?></a></h3>      
             <dl>
               <?php if (is_wp_error( $p_genres )) { ?>
               <dt>Year</dt>
