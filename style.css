@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v1.0.6
+Version: v1.0.7
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -279,7 +279,7 @@ body.work-page .project-details dl.overview .cinematographer { border-left:4px s
 
 nav.social-navigation { float:right; }
 ul.grid { margin-top:20px; }
-ul.grid li.item .image img { width:100%;height:auto; }
+ul.grid li.item .image img { width: auto; min-width:100%; height:100%; }
 body#talent .text-content > p:first-child { font-size: 22px; font-weight: 500; color: #fff; }
 body#talent .talent_list .person { overflow:hidden;padding:20px 0;line-height:1.4em;font-size:.9em; }
 body#talent  h3 { font-size:26px; font-weight: 500; margin-bottom: 10px; color: #fff; line-height: 1em; margin-bottom: 10px; }
@@ -293,8 +293,7 @@ body#talent .talent_list .bio .talent_links a { padding-left: 35px; height: 24px
 body#talent .talent_list .bio .talent_links a.imdb { background: url("images/square-imdb.png") 0 0 no-repeat; }
 body#talent .talent_list .bio .talent_links a.linkedin { background: url("images/square-linkedin.png") 0 0 no-repeat; }
 body#talent .credits { margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,.1); }
-body#talent ul.grid li.item { width: 284px; box-sizing: border-box;  }
-body#talent ul.grid li.item:nth-child(even) { margin-right: 0px; }
+body#talent ul.grid li.item { width: 284px; box-sizing: border-box; }
 
 .projects-pagination { }
 .projects-pagination nav#nav-above.site-navigation.post-navigation { }
