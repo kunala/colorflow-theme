@@ -230,8 +230,8 @@ body.work-index ul#filterOptions li.active a { color:#fff;font-weight:500; }
 ul.grid { overflow:hidden;border-bottom:2px solid white;border-right:2px solid white; }
 ul.grid { border: none; background: #fff; padding: 1px; }
 ul.grid li.item { float:left;width:316px;height:178px;border-left:2px solid white;border-top:2px solid white;position:relative;overflow:hidden; }
-ul.grid li.item { border: none; margin: 1px; background: rgba(0,0,0,.5); }
-ul.grid li.item a.click { display: block; width: 316px; height: 178px; position: absolute; top: 0; left: 0; z-index: 100; }
+ul.grid li.item { border: none; margin: 1px; background: rgba(0,0,0,.95); }
+ul.grid li.item a.click { display: block; width: 100%; height: 178px; position: absolute; top: 0; left: 0; z-index: 100; }
 ul.grid li.item .image { position:absolute;top:0;right:0;bottom:0;right:0; }
 ul.grid li.item .details { position:absolute;left:0;right:0; }
 ul.grid li.item .details h3 { color:#fff;background:rgba(0,0,0,0.7);padding:10px;margin-bottom:1px;font-size:16px !important; }
@@ -242,8 +242,6 @@ ul.grid li.item .details { top:142px; }
 body.work-index ul.grid li.item:hover .details { top:72px; }
 ul.grid { -webkit-transition:0.2s all ease-in-out;-moz-transition:0.2s all ease-in-out;-o-transition:0.2s all ease-in-out;transition:0.2s all ease-in-out; }
 ul.grid li.item .details {-webkit-transition:0.3s all ease-in-out;-moz-transition:0.3s all ease-in-out;-o-transition:0.3s all ease-in-out;transition:0.3s all ease-in-out; }
-
-
 
 body.work-page #primary { width:960px;margin:0 auto;padding-bottom:50px; }
 body.work-page .sub-header { overflow:hidden;margin-bottom:20px;padding-top:1px;padding-bottom:1px; }
@@ -295,8 +293,8 @@ body#talent .talent_list .bio .talent_links a { padding-left: 35px; height: 24px
 body#talent .talent_list .bio .talent_links a.imdb { background: url("images/square-imdb.png") 0 0 no-repeat; }
 body#talent .talent_list .bio .talent_links a.linkedin { background: url("images/square-linkedin.png") 0 0 no-repeat; }
 body#talent .credits { margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,.1); }
-body#talent ul.grid li.item { width: 50%; box-sizing: border-box;  }
-
+body#talent ul.grid li.item { width: 284px; box-sizing: border-box;  }
+body#talent ul.grid li.item:nth-child(even) { margin-right: 0px; }
 
 .projects-pagination { }
 .projects-pagination nav#nav-above.site-navigation.post-navigation { }
