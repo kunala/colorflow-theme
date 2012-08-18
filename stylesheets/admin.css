@@ -1,10 +1,10 @@
-#poststuff #post-body.columns-2 { margin: 0 !important; }
+/*#poststuff #post-body.columns-2 { margin: 0 !important; }
 #poststuff #post-body.columns-2 #post-body-content { width: 40%; min-width: 490px; margin-right: 20px; }
 #poststuff #post-body.columns-2 #postbox-container-1 { width: 280px !important; float: left; margin: 0 20px 0 0 !important;  }
 #post-body.columns-2 #postbox-container-2 { width: 280px !important; float: left; }
 
 .wp-tab-panel,.categorydiv div.tabs-panel,.customlinkdiv div.tabs-panel,.posttypediv div.tabs-panel,.taxonomydiv div.tabs-panel { height:auto !important; }
-/*#side-info-column { width:580px; }
+*//*#side-info-column { width:580px; }
 #post-body { margin-right:-620px !important; }
 #post-body-content { margin-right:600px !important; }
 #column3-sortables { width:280px;float:right;display:block;min-height:200px; }

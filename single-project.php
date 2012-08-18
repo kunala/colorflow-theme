@@ -42,36 +42,37 @@ get_header(); ?>
         </div>
         <dl class='overview'>
           <?php
-          $p_genre = get_the_terms( $post->ID, 'Genre');
-          $p_sources = get_the_terms( $post->ID, 'Source');
-          $p_colorists = get_the_terms( $post->ID, 'person');
+          global $post;
+          $p_year = get_post_meta( $post->ID, '_cmb_year_completed', true );
+          $p_director = get_post_meta( $post->ID, '_cmb_director', true );
+          $p_director_imdb = get_post_meta( $post->ID, '_cmb_director-imdb', true );
+          $p_producer = get_post_meta( $post->ID, '_cmb_producer', true );
+          $p_producer_imdb = get_post_meta( $post->ID, '_cmb_producer-imdb', true );
+          $p_cinematographer = get_post_meta( $post->ID, '_cmb_cinematographer', true );
+          $p_cinematographer_imdb = get_post_meta( $post->ID, '_cmb_cinematographer-imdb', true );
+          $p_colorist = get_the_terms( $post->ID, 'talent');
+          $p_camera = get_the_terms( $post->ID, 'camera');
+          $p_genre = get_the_terms( $post->ID, 'genres');
           $p_services = get_the_terms( $post->ID, 'service');
-          $custom_fields = get_post_custom();
-          $p_year = $custom_fields['year_completed'][0];
-          $p_director = $custom_fields["director"][0];
-          $p_producer = $custom_fields["producer"][0];
-          $p_ographer = $custom_fields["ographer"][0]; 
           ?>
-          <?php if ($p_services) { ?>
+          <?php # echo $p_year ?>
+          <?php # echo $p_director ?>
+          <?php # echo $p_director_imdb ?>
+          <?php # echo $p_producer; ?>
+          <?php # echo $p_producer_imdb ?>
+          <?php # echo $p_cinematographer_imdb ?>
+          <?php # if($p_genre) foreach($p_genre as $genre) echo $genre->name ?>
+
           <dt class='services'>Services</dt>
-          <dd class='services'><?php foreach ( $p_services as $p_service ) { echo $p_service->name.', '; } ?></dd>
-          <?php } ?>
-          <?php if ($p_colorists) { ?>
+          <dd class='services'><?php if($p_services) foreach($p_services as $service) echo $service->name.'<br/>' ?></dd>
           <dt class='colorist'>Colorist</dt>
-          <dd class='colorist'><?php foreach ( $p_colorists as $p_colorist ) { echo $p_colorist->name; } ?></dd>
-          <?php } ?>
-          <?php if ($p_sources) { ?>
+          <dd class='colorist'><?php if($p_colorist) foreach($p_colorist as $colorist) echo $colorist->name ?></dd>
           <dt class='source'>Source</dt>
-          <dd class='source'><?php foreach ( $p_sources as $p_source ) { echo $p_source->name; } ?></dd>
-          <?php } ?>
-          <?php if ($p_director) { ?>
+          <dd class='source'><?php if($p_camera) foreach($p_camera as $camera) echo $camera->name ?></dd>
           <dt class='director'>Director</dt>
           <dd class='director'><?php echo $p_director; ?></dd>
-          <?php } ?>
-          <?php if ($p_ographer) { ?>
           <dt class='cinematographer'>Cinematographer</dt>
-          <dd class='cinematographer'><?php echo $p_ographer; ?></dd>
-          <?php } ?>
+          <dd class='cinematographer'><?php echo $p_cinematographer ?></dd>
         </dl>
       </div>
       <?php endwhile; ?>

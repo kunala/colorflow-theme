@@ -20,7 +20,6 @@
   		'publicly_queryable' => false,
   		'show_ui' => true,
   		'query_var' => true,
-  		#'menu_icon' => get_stylesheet_directory_uri() . '/article16.png',
   		'rewrite' => true,
   		'capability_type' => 'post',
   		'hierarchical' => true,

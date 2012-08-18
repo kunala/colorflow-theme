@@ -16,11 +16,10 @@ get_header(); ?>
       </div>
       <div class="talent_list">
         <?php 
-        $custom_fields = get_post_custom();
         $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail');
-        $job_title = $custom_fields['job_title'][0];
-        $imdb = $custom_fields["imdb"][0];
-        $linkedin = $custom_fields["linkedin"][0];
+        $job_title = get_post_meta( $post->ID, '_cmb_job_title', true );
+        $linkedin = get_post_meta( $post->ID, '_cmb_talent_linkedin', true );
+        $imdb = get_post_meta( $post->ID, '_cmb_talent_imdb', true );
         ?>
         <div class="person">
           <div class="headshot">
@@ -28,10 +27,9 @@ get_header(); ?>
           </div>
           <div class="bio">
             <h3><?php the_title(); ?></a></h3>
-            <h4><?php echo $custom_fields['job_title'][0]; ?></h4>
             <div class="talent_links">
-              <a href="" class="imdb">IMDB</a>
-              <a href="" class="linkedin">LinkedIn</a>
+              <?php if($imdb) echo '<a class="imdb" href="'.$imdb.'">IMDB</a>' ?>
+              <?php if($linkedin) echo '<a class="linkedin" href="'.$linkedin.'">LinkedIn</a>' ?>
             </div>
           </div>
         </div>
@@ -39,22 +37,24 @@ get_header(); ?>
       <div class='text-content'>
         <?php the_content(); ?>
       </div>
+      <?php 
+      $projects_query = array(
+        'tax_query'       => array(array('taxonomy' => 'talent','field' => 'id','terms' => $talentID)),
+        'posts_per_page'  => -1,
+        'numberposts'     => 0,
+        'offset'          => 0,
+        'orderby'         => 'post_date',
+        'order'           => 'DESC',
+        'post_type'       => 'project',
+        'post_status'     => 'publish'
+      );
+      $projects = new WP_Query($projects_query);
+      if ($projects->have_posts()) :
+      ?>
       <div class="credits">
         <h3>Credits</h3>
         <ul class='grid'>
-          <?php 
-          $projects_query = array(
-	          'tax_query'       => array(array('taxonomy' => 'person','field' => 'id','terms' => $talentID)),
-	          'posts_per_page'  => -1,
-	          'numberposts'     => 0,
-	          'offset'          => 0,
-	          'orderby'         => 'post_date',
-	          'order'           => 'DESC',
-	          'post_type'       => 'project',
-	          'post_status'     => 'publish'
-          );
-          $projects = new WP_Query($projects_query);
-          while ( $projects->have_posts() ) : $projects->the_post(); 
+          <?php while ( $projects->have_posts() ) : $projects->the_post(); 
           $image_url = gallery_first_image($post->ID);
           ?>
           <li class='item'>
@@ -67,6 +67,7 @@ get_header(); ?>
           <?php endwhile; ?>
         </ul>
       </div>
+      <?php endif; ?>
       <?php endwhile; ?>
       <?php endif; ?>
     </div>

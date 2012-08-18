@@ -21,7 +21,7 @@ get_header();
       <ul id="filterOptions">
         <li class="active"><a href="#" class="all">All</a></li>
         <?php 
-        $filters = get_terms( "genre", $args );
+        $filters = get_terms( "genres", $args );
         if($filters) {
           foreach ($filters as $filter ) { ?>
             <li class=""><a href="#" class="<?php echo $filter->slug; ?>"><?php echo $filter->name; ?></a></li>
@@ -37,59 +37,41 @@ get_header();
       </div>
       <ul class='grid'>
         <?php 
-          global $i; 
-          $i = 1;
-        ?>
-        <?php 
+        global $i; 
+        $i = 1;
         while ( $projects->have_posts() ) : $projects->the_post(); 
-        global $i;
-        $custom_fields = get_post_custom();
+        global $post;
+        $p_year = get_post_meta( $post->ID, '_cmb_year_completed', true );
+        $p_director = get_post_meta( $post->ID, '_cmb_director', true );
+        $p_director_imdb = get_post_meta( $post->ID, '_cmb_director-imdb', true );
+        $p_producer = get_post_meta( $post->ID, '_cmb_producer', true );
+        $p_producer_imdb = get_post_meta( $post->ID, '_cmb_producer-imdb', true );
+        $p_cinematographer = get_post_meta( $post->ID, '_cmb_cinematographer', true );
+        $p_cinematographer_imdb = get_post_meta( $post->ID, '_cmb_cinematographer-imdb', true );
+        $p_colorist = get_the_terms( $post->ID, 'talent');
+        $p_camera = get_the_terms( $post->ID, 'camera');
+        $p_genre = get_the_terms( $post->ID, 'genres');
+        $p_services = get_the_terms( $post->ID, 'service');
         $image_url = gallery_first_image($post->ID);
-        // $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
-        $custom_fields = get_post_custom();
-        $p_genres =     get_the_terms( $post->ID, 'Genre'); // is_wp_error works
-        $p_sources =    get_the_terms( $post->ID, 'Source'); // is_wp_error works
-        $p_colorists =  get_the_terms( $post->ID, 'person'); // is_wp_error DONT WORK!
-        // $p_colorists =  get_the_terms( $post->ID, 'person');
-        $p_services =   get_the_terms( $post->ID, 'service');
-        $p_year = $custom_fields['year_completed'][0];
-        $p_director = $custom_fields["director"][0];
-        $p_producer = $custom_fields["producer"][0];
-        $p_ographer = $custom_fields["ographer"][0]; 
         ?>
-        <li class='item' data-type='<?php foreach ( $p_genres as $p_genre ) { echo $p_genre->slug; }  ?>' data-id="id-<?php echo $i; ?>">
+        <li class='item' data-type='<?php if($p_genre) foreach($p_genre as $genre) echo $genre->slug ?>' data-id="id-<?php echo $i; ?>">
           <a class="click" href="<?php echo get_permalink() ?>"> </a>
           <div class='image'><img src="<?php echo $image_url; ?>"/></div>
           <div class='details'>
             <h3><?php the_title(); ?></a></h3>      
             <dl>
-              <?php if (is_wp_error( $p_genres )) { ?>
-              <dt>Year</dt>
-              <?php } else { ?>
-              <dt><?php foreach ( $p_genres as $p_genre ) { echo $p_genre->name; } ?></dt>
-              <?php } ?>
-              
-              <?php if (is_wp_error($p_year)) { ?>
-              <dd>&nbsp;</dd>
-              <?php } else { ?>
+              <dt><?php if($p_genre) foreach($p_genre as $genre) echo $genre->name ?></dt>
               <dd><?php echo $p_year; ?></dd>
-              <?php } ?>
-              
               <dt>Colorist</dt>
-              <dd><?php foreach ($p_colorists as $p_colorist) { echo $p_colorist->name; } ?></dd>
-              
-              <?php if (is_wp_error($p_sources)) { ?>
-              <dt>&nbsp;</dt>
-              <dd>&nbsp;</dd>
-              <?php } else { ?>
+              <dd><?php if($p_colorist) foreach($p_colorist as $colorist) echo $colorist->name ?></dd>
               <dt>Source</dt>
-              <dd><?php foreach ($p_sources as $p_source) { echo $p_source->name; } ?></dd>
-              <?php } ?>
+              <dd><?php if($p_camera) foreach($p_camera as $camera) echo $camera->name ?></dd>
             </dl>
           </div>
         </li>
-        <?php $i = $i + 1;  ?>
+        <?php $i = $i + 1; ?>
         <?php endwhile; ?>
+        </ul>
     </div>
   </div>
 </div>
