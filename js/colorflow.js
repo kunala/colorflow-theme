@@ -79,16 +79,4 @@ jQuery(document).ready(function($) {
 		return false;
 	});
 
-  // $('ul.filter li a').bind('click', function(e){
-  //   e.preventDevault;
-  //   activeGenre = $(this).attr('rel');
-  //   $('ul.filter li a').removeClass('selected');
-  //   $(this).addClass('selected');
-  //   if(activeGenre == 'all')
-  //     $('ul.grid li').show();
-  //   else
-  //     $('ul.grid li').hasClass(activeGenre).fadeOut();
-  // });
-    
-  
 });

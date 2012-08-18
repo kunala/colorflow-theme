@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v1.0.9
+Version: v1.1.0
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -316,16 +316,17 @@ body.work-page .nivoSlider .nivo-caption { display: none !important; }
 body#contact { }
 body#contact .contact_map { width: 575px; height: 320px; background: url("images/contact-map.png") no-repeat; margin-bottom: 30px; }
 body#contact .columns { overflow: hidden; }
-body#contact .column { width: 50%; float: left; color: #a2b5bf; }
+body#contact .column { width: 330px; float: left; color: #a2b5bf; }
 body#contact .column a { font-size: 26px; padding-left: 35px; display: block; margin-bottom: 22px; }
 body#contact .column a.phone { background: url("images/icon-phone.png") 0 0 no-repeat; color: #fff; font-weight: 700; }
 body#contact .column a.email { background: url("images/icon-email.png") 0 5px no-repeat; font-weight: 500; }
 body#contact .column a.twitter { background: url("images/icon-tweet.png") 0 3px no-repeat; font-weight: 100; margin-bottom: 0; }
-body#contact .column.address { }
+body#contact .column.address { width: 240px; }
 body#contact .column.address h4 { font-size: 24px; color: #fff; font-weight: 500; margin-bottom: 10px; }
 body#contact .column.address p { font-weight: 100; font-size: 20px; line-height: 1.5em; }
 body#contact hr { border: none; background: rgba(255,255,255,.1); height: 2px; display: block; margin: 40px 0; }
 body#contact .contact_form { overflow: hidden; }
+body#contact .contact_form label { display: none; }
 body#contact .contact_form h2.form_title { font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 20px; }
 body#contact .contact_form .contact_info { width: 230px; float: left; }
 body#contact .contact_form .contact_info p { }

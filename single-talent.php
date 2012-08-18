@@ -52,7 +52,7 @@ get_header(); ?>
       if ($projects->have_posts()) :
       ?>
       <div class="credits">
-        <h3>Credits</h3>
+        <h3>Recent Work</h3>
         <ul class='grid'>
           <?php while ( $projects->have_posts() ) : $projects->the_post(); 
           $image_url = gallery_first_image($post->ID);
