@@ -63,6 +63,11 @@ function project_metaboxes( array $meta_boxes ) {
 				'type' => 'text_small',
 			),
 			array(
+				'name' => 'Agency',
+				'id'   => $prefix . 'agency',
+				'type' => 'text_medium',
+			),
+			array(
 				'name' => 'Director',
 				'id'   => $prefix . 'director',
 				'type' => 'text_medium',

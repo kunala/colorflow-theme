@@ -36,7 +36,7 @@ get_header();?>
           <div class="bio">
             <h3><?php the_title(); ?></a></h3>
             <h4><?php echo $job_title; ?></h4>
-            <a class="button" href="<?php the_permalink(); ?>">Bio &amp; Credits</a>
+            <a class="button" href="<?php the_permalink(); ?>">Bio &amp; Recent Work</a>
           </div>
         </li>
         <?php endwhile; ?>

@@ -125,7 +125,7 @@
             <li class="<?php echo $post->post_name; ?>"><?php echo get_the_title(); ?></li>
             <?php endwhile; ?>
           </ul>
-          <a class='more' href='amenities'>See The Facility</a>
+          <!-- <a class='more' href='amenities'>See The Facility</a> -->
         </div>
       </div>
       <div class='col location'>
