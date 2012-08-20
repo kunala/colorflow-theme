@@ -49,6 +49,7 @@ get_header(); ?>
       $p_camera = get_the_terms( $post->ID, 'camera');
       $p_genre = get_the_terms( $post->ID, 'genres');
       $p_services = get_the_terms( $post->ID, 'service');
+      $p_imdb = get_post_meta($post->ID, '_cmb_project_imdb', true)
       ?>
       <?php # echo $p_year ?>
       <?php # echo $p_director ?>
@@ -66,6 +67,9 @@ get_header(); ?>
           </div>
         </div>
         <dl class='overview'>
+          <div style="margin-bottom: 10px; ">
+            <?php if($p_imdb) echo '<a class="project_imdb" href="'.$p_imdb.'">'.get_the_title().'</a>'; ?>
+          </div>
           <dt class='services'>Services</dt>
           <dd class='services'><?php if($p_services) foreach($p_services as $service) echo $service->name.'<br/>' ?></dd>
           <dt class='colorist'>Colorist</dt>

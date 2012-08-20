@@ -58,6 +58,11 @@ function project_metaboxes( array $meta_boxes ) {
 		'show_names' => true, // Show field names on the left
 		'fields'     => array(
 			array(
+				'name' => 'Project IMDB url',
+				'id'   => $prefix . 'project_imdb',
+				'type' => 'text_medium',
+			),
+			array(
 				'name' => 'Year Completed',
 				'id'   => $prefix . 'year_completed',
 				'type' => 'text_small',
