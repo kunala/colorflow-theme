@@ -21,7 +21,7 @@ function turing_theme_options_init() {
 	// Register our settings field group
 	add_settings_section(
 		'general', // Unique identifier for the settings section
-		'Turing Options', // Section title (we don't want one)
+		'', // Section title (we don't want one)
 		'__return_false', // Section callback (we don't want anything)
 		'theme_options' // Menu slug, used to uniquely identify the page; see turing_theme_options_add_page()
 	);
@@ -33,12 +33,13 @@ function turing_theme_options_init() {
   //  'theme_options', // Menu slug, used to uniquely identify the page; see turing_theme_options_add_page()
   //  'general' // Settings section. Same as the first argument in the add_settings_section() above
   // );
-	add_settings_field( 'company_name',       __( 'Company Name', 'turing' ),         'company_email',      'theme_options', 'general' );
+	add_settings_field( 'company_name',       __( 'Company Name', 'turing' ),         'company_name',       'theme_options', 'general' );
+	add_settings_field( 'company_twitter',    __( 'Company twitter', 'turing' ),      'company_twitter',    'theme_options', 'general' );
 	add_settings_field( 'company_email',      __( 'Company Email', 'turing' ),        'company_email',      'theme_options', 'general' );
 	add_settings_field( 'company_phone',      __( 'Contact Phone Number', 'turing' ), 'company_phone',      'theme_options', 'general' );
 	add_settings_field( 'company_address_1',  __( 'Company Address 1', 'turing' ),    'company_address_1',  'theme_options', 'general' );
 	add_settings_field( 'company_address_2',  __( 'Company Address 2', 'turing' ),    'company_address_2',  'theme_options', 'general' );
-	add_settings_field( 'company_address_2b',  __( 'Company Address 2b', 'turing' ),  'company_address_2b', 'theme_options', 'general' );
+	add_settings_field( 'company_address_2b', __( 'Company Address 2b', 'turing' ),   'company_address_2b', 'theme_options', 'general' );
 	add_settings_field( 'company_address_3',  __( 'Company Address 3', 'turing' ),    'company_address_3',  'theme_options', 'general' );
 	add_settings_field( 'company_bio',        __( 'Company Bio', 'turing' ),          'company_bio',        'theme_options', 'general' );
 }
@@ -56,10 +57,10 @@ add_filter( 'option_page_capability_turing_options', 'turing_option_page_capabil
 /** Add our theme options page to the admin menu. This function is attached to the admin_menu action hook. @since turing 1.0 */
 function turing_theme_options_add_page() {
 	$theme_page = add_theme_page(
-		__( 'Turing Info', 'turing' ),   // Name of page
-		__( 'Turing Info', 'turing' ),   // Label in menu
-		'edit_theme_options',                    // Capability required
-		'theme_options',                         // Menu slug, used to uniquely identify the page
+		__( 'Company Info', 'turing' ),   // Name of page
+		__( 'Company Info', 'turing' ),   // Label in menu
+		'edit_theme_options',             // Capability required
+		'theme_options',                  // Menu slug, used to uniquely identify the page
 		'turing_theme_options_render_page' // Function that renders the options page
 	);
 }
@@ -70,8 +71,8 @@ function turing_get_theme_options() {
 	$saved = (array) get_option( 'turing_theme_options' );
 	$defaults = array(
 		'company_twitter'     => 'colorflowpost',
-		'company_name'        => 'Turing',
-		'company_email'       => 'info@turing.com',
+		'company_name'        => 'Colorflow Post',
+		'company_email'       => 'hello@colorflow.com',
 		'company_phone'       => '888 603 6023',
     'company_address_1'   => 'Zaentz Media Center',
     'company_address_2'   => '2600 10th Street',
@@ -92,6 +93,13 @@ function company_twitter() {
  	$options = turing_get_theme_options();
  	?>
 	<input type="text" name="turing_theme_options[company_twitter]" id="company_twitter" value="<?php echo esc_attr( $options['company_twitter'] ); ?>" />
+  <!-- <label class="description" for="company_email"><?php _e( 'Company Email', 'turing' ); ?></label> -->
+ 	<?php
+}
+function company_name() {
+ 	$options = turing_get_theme_options();
+ 	?>
+	<input type="text" name="turing_theme_options[company_name]" id="company_name" value="<?php echo esc_attr( $options['company_name'] ); ?>" />
   <!-- <label class="description" for="company_email"><?php _e( 'Company Email', 'turing' ); ?></label> -->
  	<?php
 }
@@ -149,7 +157,7 @@ function turing_theme_options_render_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php printf( __( 'Turing Settings', 'turing' ), get_current_theme() ); ?></h2>
+		<h2><?php printf( __( 'Company Info', 'turing' ), get_current_theme() ); ?></h2>
 		<?php settings_errors(); ?>
 		<form method="post" action="options.php">
 			<?php

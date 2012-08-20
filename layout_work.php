@@ -56,7 +56,9 @@ get_header();
         ?>
         <li class='item' data-type='<?php if($p_genre) foreach($p_genre as $genre) echo $genre->slug ?>' data-id="id-<?php echo $i; ?>">
           <a class="click" href="<?php echo get_permalink() ?>"> </a>
-          <div class='image'><img src="<?php echo $image_url; ?>"/></div>
+          <div class='image'>
+            <?php echo gallery_first_image($post->ID) ?>
+          </div>
           <div class='details'>
             <h3><?php the_title(); ?></a></h3>      
             <dl>

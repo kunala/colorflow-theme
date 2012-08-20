@@ -31,8 +31,8 @@ function project_post_type() {
 	); 
 	register_post_type( 'project' , $args );
 }
-register_taxonomy("genres",   array("project"), array("hierarchical" => true, "label" => "genres",   "singular_label" => "genre",  "rewrite" => false));
-register_taxonomy("camera",  array("project"), array("hierarchical" => true, "label" => "camera",   "singular_label" => "camera", "rewrite" => false));
+register_taxonomy("genres",   array("project"), array("hierarchical" => true, "label" => "Categories", "singular_label" => "Category",  "rewrite" => false));
+register_taxonomy("camera",  array("project"), array("hierarchical" => true, "label" => "Sources", "singular_label" => "Source", "rewrite" => false));
 
 function remove_custom_taxonomy() {
 	$custom_post_type = 'project';
@@ -68,6 +68,11 @@ function project_metaboxes( array $meta_boxes ) {
 				'type' => 'text_medium',
 			),
 			array(
+				'name' => 'Agency URL',
+				'id'   => $prefix . 'agency-url',
+				'type' => 'text_medium',
+			),
+			array(
 				'name' => 'Director',
 				'id'   => $prefix . 'director',
 				'type' => 'text_medium',
@@ -96,16 +101,16 @@ function project_metaboxes( array $meta_boxes ) {
       ),
 			array(
 	      'name' => 'Source',
-	      'id' => $prefix . 'source_radio',
+	      'id' => $prefix . 'source_check',
 	      'taxonomy' => 'camera', //Enter Taxonomy Slug
 	      'desc' => 'Add New Source from navigation on the left under Projects',
-	      'type' => 'taxonomy_radio',	
+	      'type' => 'taxonomy_multicheck',	
       ),
 			array(
-	      'name' => 'Genre',
+	      'name' => 'Category',
 	      'id' => $prefix . 'genre_radio',
 	      'taxonomy' => 'genres', //Enter Taxonomy Slug
-	      'desc' => 'Add New Genre from navigation on the left under Projects',
+	      'desc' => 'Add New Category from navigation on the left under Projects',
 	      'type' => 'taxonomy_radio',	
       ),
 			array(
@@ -115,11 +120,32 @@ function project_metaboxes( array $meta_boxes ) {
 	      'desc' => 'Services are managed from the Service post type found in left navigation',
 	      'type' => 'taxonomy_multicheck',	
       ),
+			array(
+	      'name' => 'Attached Images',
+	      'desc' => 'A list of images attached to this project. To add images to the gallery simply upload and save.',
+	      'id' => $prefix . 'file_list',
+	      'type' => 'file_list',
+      ),
 		),
 	);
 	// Add other metaboxes as needed
 	return $meta_boxes;
 }
 add_filter('cmb_meta_boxes', 'project_metaboxes');
+
+if(class_exists('kdMultipleFeaturedImages')) {
+  $args = array(
+    'id' => 'project-feature',
+    'post_type' => 'project',      // Set this to post or page
+    'labels' => array(
+      'name'      => 'Homepage Image',
+      'set'       => 'Set homepage image',
+      'remove'    => 'Remove homepage image',
+      'use'       => 'Use as homepage image',
+    )
+  );
+  new kdMultipleFeaturedImages( $args );
+}
+
 
 ?>

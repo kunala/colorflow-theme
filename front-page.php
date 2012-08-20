@@ -14,7 +14,7 @@
     <ol class='slide-images'>
     <?php 
     while ( $features->have_posts() ) : $features->the_post(); 
-      $image_url = kd_mfi_get_featured_image_url('homepage-image', 'project', 'full');
+      $image_url = kd_mfi_get_featured_image_url('project-feature', 'project', 'full');
       # $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original');
       if($image_url) {
       ?>
@@ -29,7 +29,7 @@
     <ol class='slide-tabs'>
     <?php 
     while ( $features->have_posts() ) : $features->the_post(); ?>
-      <?php $image_url = kd_mfi_get_featured_image_url('homepage-image', 'project', 'full'); ?>
+      <?php $image_url = kd_mfi_get_featured_image_url('project-feature', 'project', 'full'); ?>
       <?php if($image_url) { ?>
       <li class='slide slide-<?php echo $i; ?>' data-slide='<?php echo $i ?>'><a href="#">Tab <?php echo $i; ?></a></li>
       <?php $i = $i + 1; ?>
@@ -42,16 +42,19 @@
     <ol class='slide-details'>
       <?php 
       while ( $features->have_posts() ) : $features->the_post(); 
-      $custom_fields = get_post_custom();
-      $p_year = $custom_fields['year_completed'][0];
-      $p_director = $custom_fields["director"][0];
-      $p_producer = $custom_fields["producer"][0];
-      $p_ographer = $custom_fields["ographer"][0];
-      $p_genre =      get_the_terms( $post->ID, 'genre');
-      $p_services =   get_the_terms( $post->ID, 'service' );
-      $p_colorists =  get_the_terms( $post->ID, 'person' ); 
+      $p_year = get_post_meta( $post->ID, '_cmb_year_completed', true );
+      $p_director = get_post_meta( $post->ID, '_cmb_director', true );
+      $p_director_imdb = get_post_meta( $post->ID, '_cmb_director-imdb', true );
+      $p_producer = get_post_meta( $post->ID, '_cmb_producer', true );
+      $p_producer_imdb = get_post_meta( $post->ID, '_cmb_producer-imdb', true );
+      $p_cinematographer = get_post_meta( $post->ID, '_cmb_cinematographer', true );
+      $p_cinematographer_imdb = get_post_meta( $post->ID, '_cmb_cinematographer-imdb', true );
+      $p_colorist = get_the_terms( $post->ID, 'talent');
+      $p_camera = get_the_terms( $post->ID, 'camera');
+      $p_genre = get_the_terms( $post->ID, 'genres');
+      $p_services = get_the_terms( $post->ID, 'service');
       ?>
-      <?php $image_url = kd_mfi_get_featured_image_url('homepage-image', 'project', 'full'); ?>
+      <?php $image_url = kd_mfi_get_featured_image_url('project-feature', 'project', 'full'); ?>
       <?php if($image_url) { ?>
       <li class='slide' data-slide='<?php echo $i ?>'>
         <h2>

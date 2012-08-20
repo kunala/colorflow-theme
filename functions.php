@@ -93,12 +93,11 @@ function turing_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'turing_scripts' );
 
-function gallery_first_image(){		
+function gallery_first_image($post){		
 	global $post;
 	$args = array( 'post_type'=>'attachment','numberposts'=>1,'post_parent'=>$post->ID,'order'=>'ASC','orderby'=>'menu_order','post_mime_type'=>'image');
-	$attachments = get_posts( $args );
-	if ( $attachments )	{	foreach ( $attachments as $attachment )	{	return wp_get_attachment_url( $attachment->ID ); } }
-	return false;
+	$attachments = get_posts($args);
+	if ( $attachments )	{	foreach ( $attachments as $attachment )	{	return wp_get_attachment_image($attachment->ID, 'grid-thumb'); } }
 }
 
 add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );

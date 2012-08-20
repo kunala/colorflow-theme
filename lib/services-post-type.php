@@ -22,7 +22,7 @@
   		'query_var' => true,
   		'rewrite' => true,
   		'capability_type' => 'post',
-  		'hierarchical' => true,
+  		'hierarchical' => false,
   		'menu_position' => null,
   		'supports' => array('title','editor','thumbnail')
   	  ); 
