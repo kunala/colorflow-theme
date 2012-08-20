@@ -59,7 +59,9 @@ get_header(); ?>
           ?>
           <li class='item'>
             <a class="click" href="<?php echo get_permalink() ?>"> </a>
-            <div class='image'><img src="<?php echo $image_url; ?>"/></div>
+            <div class='image'>
+              <?php echo gallery_first_image($post->ID) ?>
+            </div>
             <div class='details'>
               <h3><?php the_title(); ?></h3>      
             </div>

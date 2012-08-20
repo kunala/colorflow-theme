@@ -109,7 +109,7 @@
     <div class='cta-columns'>
       <div class='col services'>
         <div class='inner'>
-          <h3>Digital Intermetiate & HD Finishing</h3>
+          <h3>Digital Intermediate & HD Finishing</h3>
           <h2>Services</h2>
           <ul class='cta-list'>
             <?php while ( $services->have_posts() ) : $services->the_post();  ?>
