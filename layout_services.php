@@ -28,12 +28,11 @@ get_header();
         $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail');
         ?>
         <li>
-          <?php 
-            echo get_the_post_thumbnail( $post_id, 'thumbnail'); 
-            the_title();
-            the_content();
-          ?>
-          <hr /> 
+          <?php echo get_the_post_thumbnail( $post_id, 'thumbnail'); ?>
+          <h3><?php the_title(); ?></h3>
+          <div class="text-content">
+            <?php the_content() ?>
+          </div>
         </li>
         <?php endwhile; ?>
       </ul>

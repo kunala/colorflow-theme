@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v1.1.3
+Version: v1.1.4
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -31,23 +31,23 @@ blockquote {
 #wrapper { background:#1b1c1e url("images/bg_lightened.jpg") center top no-repeat; }
 a { color:#b6cbd7;text-decoration:none; }
 .inner-container { width:960px;margin:0 auto; }
-#header { background:rgba(0,0,0,0.2);border-bottom:1px solid rgba(0,0,0,0.3);padding:40px 0;margin-bottom:56px; }
+#header { background:rgba(0,0,0,0.2);border-bottom:1px solid rgba(0,0,0,0.3);padding: 35px 0;margin-bottom:56px; }
 body#home #header { background:transparent;border-bottom:none;padding:50px 0;margin-bottom:0; }
 #header .navigation { overflow:hidden; }
-#header .navigation { height:54px; }
+#header .navigation { height: 40px; }
 body#home #header .navigation { height:29px; }
-#header .navigation h1.logo a { width:216px;height:51px;display:block;background:url("images/logo_small.png");text-indent:-999em; }
+#header .navigation h1.logo a { width:216px;height:40px;display:block;background:url("images/logo_small.png") bottom left no-repeat; text-indent:-999em; }
 #header .navigation h1.logo { float:left; }
-#header .navigation nav.main-navigation { float:right;margin-top:25px; }
+#header .navigation nav.main-navigation { float:right;margin-top: 10px; }
 body#home #header .navigation nav.main-navigation { float:left;margin-top:0; }
-body#home #header .navigation nav.social-navigation { float:right; }
+body#home #header .navigation nav.social-navigation { float:right; position: relative; top: 3px; }
 #header .navigation nav.main-navigation .heading,
 #header .navigation nav.main-navigation ul,
 #header .navigation nav.main-navigation li,
 #header .navigation nav.social-navigation .heading,
 #header .navigation nav.social-navigation ul,
 #header .navigation nav.social-navigation li { vertical-align:middle;line-height:1.5em; }
-#header .navigation nav.main-navigation a { padding:3px 8px; box-sizing: border-box; font-weight:100;}
+#header .navigation nav.main-navigation a { padding:5px 8px 3px 8px; box-sizing: border-box; font-weight:100;}
 #header .navigation nav.main-navigation a { color:#a0b3be; }
 #header .navigation nav.main-navigation a:hover { color:#b6cbd7; }
 #header .navigation nav.main-navigation li:first-child a { width:24px;height:24px;background-image:url("images/home.png");background-position:center 4px;margin-top:3px;background-repeat:no-repeat;text-indent:-999em; }
@@ -181,11 +181,13 @@ body#home .col.amenities ul li.close-to-bart-oak-sfo { background-image:url("ima
 body#home #content .cta-columns .col.services a.more,
 body#home #content .cta-columns .col.amenities a.more { -webkit-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;-moz-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;background-color:rgba(0,0,0,0.2);padding:7px 20px;margin-bottom:1px;color:#fff;text-transform:uppercase;font-size:12px;font-weight:500; }
 
-.location .inner { background:url("images/map.png") 0 0 no-repeat;height:300px;padding-left:110px;padding-top:5px; }
+.location .inner { background:url("images/map_round.png") 0 0 no-repeat; padding-left: 110px; padding-top:5px; }
+.location .inner h2 { margin-bottom: 0px !important; }
 .location .inner h4,
 .location .inner p { font-size:14px;line-height:1.4em; }
-.location .inner h4 { color:#ffffff;font-weight:700; }
+.location .inner h4 { color:#ffffff; font-weight:700; margin-top: 10px; }
 .location .inner p { font-weight:300; }
+.location .building { width: 100%; height: 181px; background: url("images/contact_building.png") bottom right no-repeat; }
 .location a.contact-button { display: block; margin-top: 10px;  }
 #secondary .location .inner { height: auto; overflow: hidden; background-position: 0 7px; }
 
@@ -233,14 +235,17 @@ ul.grid { border: none; background: transparent; padding: 1px; }
 ul.grid li.item { float: left; width: 316px; height: 178px; border-left: 2px solid white; border-top: 2px solid white; position: relative; overflow: hidden; }
 ul.grid li.item { border: none; margin: 1px; background: rgba(0,0,0,.95); }
 ul.grid li.item a.click { display: block; width: 100%; height: 178px; position: absolute; top: 0; left: 0; z-index: 100; }
-ul.grid li.item .image { position:absolute;top:0;right:0;bottom:0;right:0; }
-ul.grid li.item .details { position:absolute;left:0;right:0; }
-ul.grid li.item .details h3 { color:#fff;background:rgba(0,0,0,0.7);padding:10px;margin-bottom:1px;font-size:16px !important; }
-ul.grid li.item .details dl { background:rgba(0,0,0,0.57);padding:10px;overflow:hidden;line-height:1.25em; }
+ul.grid li.item .image { position: absolute; top: 0; right: 0; bottom: 0; right: 0; }
+ul.grid li.item .details { position: absolute; left: 0; right: 0; bottom: -128px; }
+body#talent ul.grid li.item .details { bottom: -1px; }
+body.work-index ul.grid li.item:hover .details { bottom: 0px; }
+ul.grid li.item .details h3 { display: table; width: 100%; height: 50px; vertical-align: middle; color: #fff; background: rgba(0,0,0,0.7); margin-bottom:1px !important; font-size:16px !important; }
+ul.grid li.item .details h3 span { display: table-cell; vertical-align: middle; width: 100%; padding: 0 10px;  }
+ul.grid li.item .details dl { box-sizing: border-box; height: 127px; background:rgba(0,0,0,0.57);padding:10px;overflow:hidden;line-height:1.25em; }
 ul.grid li.item .details dl dt { float:left;clear:left;font-weight:300; }
 ul.grid li.item .details dl dd { padding-left:100px;color:#fff; }
-ul.grid li.item .details { top:142px; }
-body.work-index ul.grid li.item:hover .details { top:72px; }
+
+
 ul.grid { -webkit-transition:0.2s all ease-in-out;-moz-transition:0.2s all ease-in-out;-o-transition:0.2s all ease-in-out;transition:0.2s all ease-in-out; }
 ul.grid li.item .details {-webkit-transition:0.3s all ease-in-out;-moz-transition:0.3s all ease-in-out;-o-transition:0.3s all ease-in-out;transition:0.3s all ease-in-out; }
 
@@ -403,7 +408,8 @@ body#home #content .cta-columns .col.amenities a.more,
 body.work-index ul#filterOptions li, 
 body.work-page .sub-header .projects-pagination a,
 body.work-page .project-highlights .highlights-slideshow ul.navigation li,
-body.work-page .nivoSlider .nivo-controlNav a 
+body.work-page .nivoSlider .nivo-controlNav a,
+ul.services_list li h3
 { display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline; }  
 
 /*BUTTON BOX-SHADOW*/
@@ -459,4 +465,11 @@ span.wpcf7-not-valid-tip {
   display: none;
 }
 input.wpcf7-not-valid { background: magenta !important; }
-    
+
+ul.services_list { margin-top: 30px; }
+ul.services_list li { padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+ul.services_list li img { vertical-align: middle; margin-right: 20px; }
+ul.services_list li h3 { font-size: 26px; font-weight: 500; margin-bottom: 10px; color: white; line-height: 1em; margin-bottom: 0px; }
+ul.services_list li .text-content { padding-left: 86px; }
+
+aside#advanced-recent-posts-2 { display: none; }

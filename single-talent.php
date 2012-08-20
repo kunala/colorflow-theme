@@ -63,7 +63,7 @@ get_header(); ?>
               <?php echo gallery_first_image($post->ID) ?>
             </div>
             <div class='details'>
-              <h3><?php the_title(); ?></h3>      
+              <h3><span><?php the_title(); ?></span></h3>      
             </div>
           </li>
           <?php endwhile; ?>

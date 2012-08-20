@@ -133,18 +133,20 @@
       </div>
       <div class='col location'>
         <div class='inner'>
-          <?php $t_options = turing_get_theme_options(); ?>
-          <h4>Zaentz Media Center</h4>
+          <?php 
+            $t_options = turing_get_theme_options();
+            $email = $t_options['company_email'];
+          ?>
+          <h2><?php echo $t_options['company_phone']; ?></h2>
+          <p><a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></p>
+          <h4><?php echo $t_options['company_address_1']; ?></h4>
           <p>
-            <?php echo $t_options['company_address_1']; ?>
-            <br/>
-            <?php echo $t_options['company_address_2']; ?>
-            <br/>
-            <?php echo $t_options['company_address_2b']; ?>
+            <?php echo $t_options['company_address_2'].' '.$t_options['company_address_2b'];; ?>
             <br/>
             <?php echo $t_options['company_address_3']; ?>
           </p>
         </div>
+        <div class="building"> </div>
       </div>
     </div>
   </div>
