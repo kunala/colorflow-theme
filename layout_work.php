@@ -62,12 +62,25 @@ get_header();
           <div class='details'>
             <h3><span><?php the_title(); ?></span></h3>      
             <dl>
-              <dt><?php if($p_genre) foreach($p_genre as $genre) echo $genre->name ?></dt>
-              <dd><?php echo $p_year; ?></dd>
+              <?php if($p_year) { ?>
+              <dt>Year</dt>
+              <dd><?php  echo $p_year; ?></dd>
+              <?php } ?>
+
+              <?php if($p_genre) { ?>
+              <dt>Category</dt>
+              <dd><?php foreach($p_genre as $genre) echo $genre->name; ?></dd>
+              <?php } ?>
+
+              <?php if($p_colorist) { ?>
               <dt>Colorist</dt>
-              <dd><?php if($p_colorist) foreach($p_colorist as $colorist) echo $colorist->name ?></dd>
+              <dd><?php foreach($p_colorist as $colorist) echo $colorist->name;  ?></dd>
+              <?php } ?>
+            
+              <?php if($p_camera) { ?>
               <dt>Source</dt>
-              <dd><?php if($p_camera) foreach($p_camera as $camera) echo $camera->name ?></dd>
+              <dd><?php foreach($p_camera as $camera) echo $camera->name.'<br/>';  ?></dd>
+              <?php } ?>
             </dl>
           </div>
         </li>

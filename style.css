@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v1.1.4
+Version: v1.1.5
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -184,7 +184,7 @@ body#home #content .cta-columns .col.amenities a.more { -webkit-box-shadow:rgba(
 .location .inner { background:url("images/map_round.png") 0 0 no-repeat; padding-left: 110px; padding-top:5px; }
 .location .inner h2 { margin-bottom: 0px !important; }
 .location .inner h4,
-.location .inner p { font-size:14px;line-height:1.4em; }
+.location .inner p { font-size: 13px;line-height:1.4em; }
 .location .inner h4 { color:#ffffff; font-weight:700; margin-top: 10px; }
 .location .inner p { font-weight:300; }
 .location .building { width: 100%; height: 181px; background: url("images/contact_building.png") bottom right no-repeat; }
