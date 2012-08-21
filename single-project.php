@@ -78,6 +78,9 @@ get_header(); ?>
           </div>
           <dt class='services'>Services</dt>
           <dd class='services'><?php if($p_services) foreach($p_services as $service) echo $service->name.'<br/>' ?></dd>
+          <?php if($p_imdb) { ?>
+          <dt class="imdb"><a href="<?php echo $p_imdb ?>">IMDB Page</a></dt>
+          <?php } ?>
           <dt class='colorist'>Colorist</dt>
           <dd class='colorist'>
             <?php if($p_colorist) foreach($p_colorist as $colorist) echo "<a href='".get_permalink($colorist->term_id)."'>".$colorist->name."</a>"; ?>
