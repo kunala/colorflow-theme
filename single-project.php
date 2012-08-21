@@ -69,7 +69,7 @@ get_header(); ?>
           <dt class='services'>Services</dt>
           <dd class='services'><?php if($p_services) foreach($p_services as $service) echo $service->name.'<br/>' ?></dd>
           <?php if($p_imdb) {
-          echo '<dt class="imdb"><a href="'.$p_imdb.'">IMDB Page</a></dt>';
+          echo '<dt class="imdb"><a href="'.$p_imdb.'">IMDB Page</a></dt><dd class="imdb"> </dd>';
           } ?>
           <dt class='colorist'>Colorist</dt>
           <dd class='colorist'>
