@@ -55,12 +55,11 @@ get_header(); ?>
         <h3>Recent Work</h3>
         <ul class='grid'>
           <?php while ( $projects->have_posts() ) : $projects->the_post(); 
-          $image_url = gallery_first_image($post->ID);
           ?>
           <li class='item'>
             <a class="click" href="<?php echo get_permalink() ?>"> </a>
             <div class='image'>
-              <?php echo gallery_first_image($post->ID) ?>
+              <?php echo get_the_post_thumbnail($post->ID, 'grid-thumb')?>  
             </div>
             <div class='details'>
               <h3><span><?php the_title(); ?></span></h3>      

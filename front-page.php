@@ -54,7 +54,7 @@ $i = 1;
     $details_query = array('posts_per_page'=> -1, 'numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
     $feature_details = new WP_Query($details_query);
     if($feature_details) : while ($feature_details ->have_posts()) : $feature_details->the_post(); 
-      $p_year = get_post_meta( $post->ID, '_cmb_year_completed', true );
+      # $p_year = get_post_meta( $post->ID, '_cmb_year_completed', true );
       $p_director = get_post_meta( $post->ID, '_cmb_director', true );
       $p_director_imdb = get_post_meta( $post->ID, '_cmb_director-imdb', true );
       $p_producer = get_post_meta( $post->ID, '_cmb_producer', true );
@@ -73,7 +73,6 @@ $i = 1;
           <h2>
             <?php echo get_the_title(); ?> 
             <span>
-              <?php if($p_year) { echo $p_year; } ?>
               <?php if($p_genre) { foreach($p_genre as $the_genre) echo $the_genre->name; } ?>
             </span>
           </h2>
