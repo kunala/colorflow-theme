@@ -10,10 +10,13 @@ $i = 1;
     $slides_query = array('posts_per_page'=> -1, 'numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
     $feature_slides = new WP_Query($slides_query);
     if($feature_slides) : while ($feature_slides ->have_posts()) : $feature_slides->the_post(); 
-      $featured_focused = get_post_meta($post->ID, '_cmb_focused_image', true);
-      $featured_blurred = get_post_meta($post->ID, '_cmb_blur_image', true);
-      if($featured_focused) { ?>
+      $focused_ID = get_post_meta($post->ID, '_cmb_focused_image_id', true);
+      $blurred_ID = get_post_meta($post->ID, '_cmb_blur_image_id', true);
+      $featured_focused = wp_get_attachment_url($focused_ID);
+      $featured_blurred = wp_get_attachment_url( $blurred_ID);
+      if($focused_ID) { ?>
         <li class='slide' data-slide='<?php echo $i ?>' style='background: url(<?php echo $featured_focused; ?>) center 60px no-repeat;'>
+          <h1><?php echo $focused_ID; ?></h1>
           <div class="blur" style="background: url(<?php echo $featured_blurred; ?>) center top no-repeat;">&nbsp;</div>
           <?php echo get_the_title(); ?> 
         </li>
@@ -32,8 +35,8 @@ $i = 1;
     $tabs_query = array('posts_per_page'=> -1, 'numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
     $feature_tabs = new WP_Query($tabs_query);
     if($feature_tabs) : while ($feature_tabs ->have_posts()) : $feature_tabs->the_post(); 
-      $featured_focused = get_post_meta($post->ID, '_cmb_focused_image', true);
-      if($featured_focused) { ?>
+      $focused_ID = get_post_meta($post->ID, '_cmb_focused_image_id', true);
+      if($focused_ID) { ?>
         <li class='slide slide-<?php echo $i; ?>' data-slide='<?php echo $i ?>'><a href="#">Tab <?php echo $i; ?></a></li>
         <?php 
         $i = $i + 1; 
@@ -63,8 +66,9 @@ $i = 1;
       $p_genre = get_the_terms( $post->ID, 'genres');
       $p_services = get_the_terms( $post->ID, 'service');
       #$featured_image_details = kd_mfi_get_featured_image_url('project-featured-image', 'project', 'full');
-      $featured_focused = get_post_meta($post->ID, '_cmb_focused_image', true);
-      if($featured_focused) : ?>
+      #$featured_focused = get_post_meta($post->ID, '_cmb_focused_image', true);
+      $focused_ID = get_post_meta($post->ID, '_cmb_focused_image_id', true);
+      if($focused_ID) : ?>
         <li class='slide' data-slide='<?php echo $i ?>'>
           <h2>
             <?php echo get_the_title(); ?> 
