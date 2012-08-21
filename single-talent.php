@@ -54,8 +54,7 @@ get_header(); ?>
       <div class="credits">
         <h3>Recent Work</h3>
         <ul class='grid'>
-          <?php while ( $projects->have_posts() ) : $projects->the_post(); 
-          ?>
+          <?php while ( $projects->have_posts() ) : $projects->the_post(); ?>
           <li class='item'>
             <a class="click" href="<?php echo get_permalink() ?>"> </a>
             <div class='image'>
