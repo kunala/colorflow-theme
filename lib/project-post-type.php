@@ -39,7 +39,7 @@ function remove_custom_taxonomy() {
 	remove_meta_box('genres'.'div', $custom_post_type, 'side' );
 	remove_meta_box('camera'.'div', $custom_post_type, 'side' );
 	remove_meta_box('custom-post-type-onomies-talent', $custom_post_type, 'side' );
-	// remove_meta_box('custom-post-type-onomies-service', $custom_post_type, 'side' );
+	remove_meta_box('custom-post-type-onomies-service', $custom_post_type, 'side' );
   // $custom_taxonomy_slug is the slug of your taxonomy, e.g. 'genre' )
   // $custom_post_type is the "slug" of your post type, e.g. 'movies' )
 }
