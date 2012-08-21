@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v1.1.96
+Version: v1.1.97
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -167,17 +167,17 @@ body#home .cta-columns .col h2 { color:#d5d7da;font-size:24px;font-weight:500;ma
 body#home .cta-columns .col ul { margin-bottom:20px; }
 body#home .cta-columns .col li { padding-left:40px;font-size:16px;line-height:36px;background:0 center no-repeat; }
 
-body#home .col.services ul li.color-grading { background-image:url("images/icons/services_grading.png"); }
-body#home .col.services ul li.hd-finishing { background-image:url("images/icons/services_hd.png"); }
-body#home .col.services ul li.lto-5-data-archiving { background-image:url("images/icons/services_archiving.png"); }
-body#home .col.services ul li.proxies-compression { background-image:url("images/icons/services_proxies.png"); }
-body#home .col.services ul li.red-workflow { background-image:url("images/icons/services_red.png"); }
+body#home .col.services ul li.di_color { background-image:url("images/icons/services_grading.png"); }
+body#home .col.services ul li.finishing { background-image:url("images/icons/services_hd.png"); }
+body#home .col.services ul li.lto_data { background-image:url("images/icons/services_archiving.png"); }
+body#home .col.services ul li.digital_dalies { background-image:url("images/icons/services_proxies.png"); }
+body#home .col.services ul li.dcp { background-image:url("images/icons/services_red.png"); }
 
-body#home .col.amenities ul li.art-gallery { background-image:url("images/icons/amenities_gallery.png"); }
-body#home .col.amenities ul li.di-theater { background-image:url("images/icons/amenities_di.png"); }
-body#home .col.amenities ul li.easy-secure-parking { background-image:url("images/icons/amenities_parking.png"); }
-body#home .col.amenities ul li.near-gourmet-ghetto { background-image:url("images/icons/amenities_gourmet.png"); }
-body#home .col.amenities ul li.close-to-bart-oak-sfo { background-image:url("images/icons/amenities_transportation.png"); }
+body#home .col.amenities ul li.hd_suites { background-image:url("images/icons/amenities_gallery.png"); }
+body#home .col.amenities ul li.theater { background-image:url("images/icons/amenities_di.png"); }
+body#home .col.amenities ul li.parking { background-image:url("images/icons/amenities_parking.png"); }
+body#home .col.amenities ul li.near-food { background-image:url("images/icons/amenities_gourmet.png"); }
+body#home .col.amenities ul li.transportation { background-image:url("images/icons/amenities_transportation.png"); }
 
 body#home #content .cta-columns .col.services a.more,
 body#home #content .cta-columns .col.amenities a.more { -webkit-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;-moz-box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;box-shadow:rgba(0,0,0,0.4) 0 -1px 1px,rgba(255,255,255,0.1) 0 1px 1px;background-color:rgba(0,0,0,0.2);padding:7px 20px;margin-bottom:1px;color:#fff;text-transform:uppercase;font-size:12px;font-weight:500; }
@@ -279,12 +279,12 @@ body.work-page .project-details dl.overview dt,body.work-page .project-details d
 body.work-page .project-details dl.overview dt { color:#b6cbd7;padding-top:10px;font-weight:300; }
 body.work-page .project-details dl.overview dd { color:#fff;padding-bottom:10px;border-bottom:1px solid #37393a; }
 body.work-page .project-details dl.overview .services { border-left:4px solid #e08e17; }
-body.work-page .project-details dl.overview .imdb { border-left:4px solid #45176D; }
-body.work-page .project-details dl.overview .imdb a { padding-left: 35px; height: 24px; line-height: 24px; background: url("images/square-imdb.png") 0 0 no-repeat; }
 body.work-page .project-details dl.overview .colorist { border-left:4px solid #e9107a; }
 body.work-page .project-details dl.overview .source { border-left:4px solid #9e0f43; }
 body.work-page .project-details dl.overview .director { border-left:4px solid #191b68; }
 body.work-page .project-details dl.overview .cinematographer { border-left:4px solid #297db9; }
+body.work-page .project-details div.imdb { text-align: center; }
+body.work-page .project-details div.imdb a { padding-left: 35px; height: 24px; line-height: 24px; background: url("images/square-imdb.png") 0 0 no-repeat; }
 
 body.work-page .project-details .service_icons { text-align: center; }
 body.work-page .project-details .service_icons img { width: 30px; height: auto; margin: 0 5px;  }
@@ -415,7 +415,8 @@ body.work-index ul#filterOptions li,
 body.work-page .sub-header .projects-pagination a,
 body.work-page .project-highlights .highlights-slideshow ul.navigation li,
 body.work-page .nivoSlider .nivo-controlNav a,
-ul.services_list li h3
+ul.services_list li h3,
+body.work-page .project-details div.imdb a
 { display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline; }  
 
 /*BUTTON BOX-SHADOW*/

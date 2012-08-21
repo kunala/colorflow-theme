@@ -121,14 +121,12 @@ $i = 1;
         <div class='inner'>
           <h3>Digital Intermediate &amp; HD Finishing</h3>
           <h2>Services</h2>
-          <?php 
-          $service_query = array('posts_per_page'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'ASC','post_type'=> 'service','post_status'=> 'publish');
-          $services = new WP_Query($service_query);
-          ?>
           <ul class='cta-list'>
-            <?php while ( $services->have_posts() ) : $services->the_post();  ?>
-            <li class="<?php echo $post->post_name; ?>"><?php echo get_the_title(); ?></li>
-            <?php endwhile; ?>
+            <li class="di_color">DI Color Grading</li>
+            <li class="finishing">Finishing</li>
+            <li class="lto_data">LTO-5 Data Archiving</li>
+            <li class="digital_dalies">Digital Dailies</li>
+            <li class="dcp">Digital Cinema Packaging (DCP)</li>
           </ul>
           <a class='more' href='services'>View All Services</a>
         </div>
@@ -137,14 +135,12 @@ $i = 1;
         <div class='inner'>
           <h3>Finest Coffee in the West</h3>
           <h2>Amenities</h2>
-          <?php
-          $amenity_query = array('numberposts'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'ASC','post_type'=> 'amenity','post_status'=> 'publish'); 
-          $amenities = new WP_Query($amenity_query);
-          ?>
           <ul class='cta-list'>
-            <?php while ( $amenities->have_posts() ) : $amenities->the_post();  ?>
-            <li class="<?php echo $post->post_name; ?>"><?php echo get_the_title(); ?></li>
-            <?php endwhile; ?>
+            <li class="theater">DI Theater</li>
+            <li class="hd_suites">HD Suites</li>
+            <li class="parking">Easy, Secure Parking</li>
+            <li class="near_food">Near Gourmet Ghetto</li>
+            <li class="transportation">Close to BART, OAK, SFO</li>
           </ul>
           <!-- <a class='more' href='amenities'>See The Facility</a> -->
         </div>

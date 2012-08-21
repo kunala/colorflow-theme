@@ -56,6 +56,11 @@ function talent_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'talent_imdb',
 				'type' => 'text_medium',
 			),
+			array(
+				'name' => 'twitter URL',
+				'id'   => $prefix . 'talent_twitter',
+				'type' => 'text_medium',
+			),
 		),
 	);
 	// Add other metaboxes as needed
