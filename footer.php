@@ -31,7 +31,7 @@
     </nav>
     <!-- <p class="copyright">Copyright 2012 Colorflow Post, Inc.</p> -->
     <p class="copyright">
-      © <?php echo date("Y"); echo '&nbsp;'.$t_options['company_name']; ?>. All Rights Reserved.
+      © <?php echo date("Y").','; echo '&nbsp;'.$t_options['company_name']; ?>. All Rights Reserved.
       <!-- <span class="social_icons">
         <a class="vimeo" href="https://vimeo.com/colorflow">Vimeo</a>
         <a class="twitter" href="https://twitter.com/colorflowpost">Twitter</a>
