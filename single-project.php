@@ -57,13 +57,6 @@ get_header(); ?>
       $p_services = get_the_terms( $post->ID, 'service');
       $p_imdb = get_post_meta($post->ID, '_cmb_project_imdb', true)
       ?>
-      <?php # echo $p_year ?>
-      <?php # echo $p_director ?>
-      <?php # echo $p_director_imdb ?>
-      <?php # echo $p_producer; ?>
-      <?php # echo $p_producer_imdb ?>
-      <?php # echo $p_cinematographer_imdb ?>
-      <?php # if($p_genre) foreach($p_genre as $genre) echo $genre->name ?>
       <div class='project-details'>
         <div class='text-content'>
           <?php the_content(); ?>
@@ -73,14 +66,11 @@ get_header(); ?>
           </div>
         </div>
         <dl class='overview'>
-          <div style="margin-bottom: 10px; ">
-            <?php if($p_imdb) echo '<a class="project_imdb" href="'.$p_imdb.'">'.get_the_title().'</a>'; ?>
-          </div>
           <dt class='services'>Services</dt>
           <dd class='services'><?php if($p_services) foreach($p_services as $service) echo $service->name.'<br/>' ?></dd>
-          <?php if($p_imdb) { ?>
-          <dt class="imdb"><a href="<?php echo $p_imdb ?>">IMDB Page</a></dt>
-          <?php } ?>
+          <?php if($p_imdb) {
+          echo '<dt class="imdb"><a href="'.$p_imdb.'">IMDB Page</a></dt>';
+          } ?>
           <dt class='colorist'>Colorist</dt>
           <dd class='colorist'>
             <?php if($p_colorist) foreach($p_colorist as $colorist) echo "<a href='".get_permalink($colorist->term_id)."'>".$colorist->name."</a>"; ?>
