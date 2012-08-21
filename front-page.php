@@ -122,7 +122,7 @@ $i = 1;
           <h3>Digital Intermediate &amp; HD Finishing</h3>
           <h2>Services</h2>
           <ul class='cta-list'>
-            <li class="di_color">DI Color Grading</li>
+            <li class="di_color">Color Grading</li>
             <li class="finishing">Finishing</li>
             <li class="lto_data">LTO-5 Data Archiving</li>
             <li class="digital_dalies">Digital Dailies</li>

@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v2.0.0
+Version: v2.0.1
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -27,6 +27,7 @@ blockquote {
   font-size: 16px; font-style: italic; color: #B9CCD7; text-align: center;
   background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); 
 }
+
 
 #wrapper { background:#1b1c1e url("images/bg_lightened.jpg") center top no-repeat; }
 a { color:#b6cbd7;text-decoration:none; }
@@ -168,15 +169,15 @@ body#home .cta-columns .col ul { margin-bottom:20px; }
 body#home .cta-columns .col li { padding-left:45px;font-size:16px;line-height:36px;background:0 center no-repeat; }
 
 body#home .col.services ul li.di_color { background-image:url("images/icons/services_grading.png"); }
-body#home .col.services ul li.finishing { background-image:url("images/icons/services_hd.png"); }
-body#home .col.services ul li.lto_data { background-image:url("images/icons/services_archiving.png"); background-position: 6px 7px; }
-body#home .col.services ul li.digital_dalies { background-image:url("images/icons/services_proxies.png"); }
-body#home .col.services ul li.dcp { background-image:url("images/icons/services_red.png"); }
+body#home .col.services ul li.finishing { background-image:url("images/icons/services_finishing.png"); }
+body#home .col.services ul li.lto_data { background-image:url("images/icons/services_archiving.png"); background-position: 1px 7px; }
+body#home .col.services ul li.digital_dalies { background-image:url("images/icons/services_dalies.png"); }
+body#home .col.services ul li.dcp { background-image:url("images/icons/services_dcp.png"); }
 
-body#home .col.amenities ul li { background-position: 2px 6px; }
-body#home .col.amenities ul li.hd_suites { background-image:url("images/icons/amenities_gallery.png"); }
+body#home .col.amenities ul li { background-position: 6px 6px; }
+body#home .col.amenities ul li.hd_suites { background-image:url("images/icons/services_hd.png");  background-position: 6px 9px; }
 body#home .col.amenities ul li.theater { background-image:url("images/icons/amenities_hd_theater.png"); background-position: 2px 6px; }
-body#home .col.amenities ul li.parking { background-image:url("images/icons/amenities_parking.png"); }
+body#home .col.amenities ul li.parking { background-image:url("images/icons/amenities_parking.png"); background-position: 7px 6px; }
 body#home .col.amenities ul li.near_food { background-image:url("images/icons/amenities_gourmet.png"); }
 body#home .col.amenities ul li.transportation { background-image:url("images/icons/amenities_transportation.png"); }
 
@@ -343,12 +344,11 @@ body#contact .column.address h4 { font-size: 24px; color: #fff; font-weight: 500
 body#contact .column.address p { font-weight: 100; font-size: 20px; line-height: 1.5em; }
 body#contact hr { border: none; background: rgba(255,255,255,.1); height: 2px; display: block; margin: 40px 0; }
 body#contact .contact_form { overflow: hidden; }
-body#contact .contact_form label { display: none; }
+body#contact .contact_form p.label { position: absolute; top: 10px; }
 body#contact .contact_form h2.form_title { font-size: 34px; font-weight: 700; color: #fff; margin-bottom: 18px; letter-spacing: -1px; }
 body#contact .contact_form .contact_info { width: 230px; float: left; }
-body#contact .contact_form .contact_info p { }
+body#contact .contact_form .contact_info p { margin-bottom: 14px; position: relative; }
 body#contact .contact_form .message  { width: 330px; float: right; }
-body#contact .contact_form .message p { }
 body#contact .contact_form input[type="text"] { width: 100%; height: 42px; box-sizing: border-box; padding: 0 8px; }
 body#contact .contact_form textarea { width: 100%; height: 156px; box-sizing: border-box; margin-bottom: 10px; padding: 8px; }
 body#contact .contact_form input[type="submit"] { width: 100%; }
@@ -357,6 +357,7 @@ body#contact #thanks { width: 577px; height: 205px; background: url("images/than
 body#contact #thanks h3 { color: #8A9AA2; font-size: 28px; font-weight: 500; }
 body#contact #thanks p { font-size: 18px; line-height: 1.5em; color: #fff; font-weight: 100; margin-top: 20px; }
 body#contact #thanks { display: none; }
+
 #comments { }
 h2.comments-title { }
 h2.comments-title span { }
@@ -476,7 +477,24 @@ span.wpcf7-not-valid-tip {
   padding: 2px;
   display: none;
 }
-input.wpcf7-not-valid { background: magenta !important; }
+input.wpcf7-not-valid { background: #A4BEDE !important; }
+form.wpcf7-form.sent .contact_info { display: none; }
+form.wpcf7-form.sent .message { display: none; }
+.wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok { margin: 0; border: none; width: 577px; height: 205px; background: url("images/thanks-bg.png") no-repeat; padding: 40px 50px; box-sizing: border-box; clear: both; }
+.wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok h3 { color: #8A9AA2; font-size: 28px; font-weight: 500; }
+.wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok p { font-size: 18px; line-height: 1.5em; color: #fff; font-weight: 100; margin-top: 20px; }
+
+
+input::-webkit-input-placeholder { color: #fff; }
+input:-moz-placeholder { color: #fff; }
+input:-ms-input-placeholder { color: #fff; }
+::-webkit-input-placeholder { color: #fff; }
+:-moz-placeholder { color: #fff; }
+:-ms-input-placeholder { color: #fff; }
+
+
+
+
 
 ul.services_list { margin-top: 30px; }
 ul.services_list li { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.1); }

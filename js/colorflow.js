@@ -49,6 +49,15 @@ jQuery(document).ready(function($) {
      }
   });
   
+  $('.wpcf7-form-control').not('.wpcf7-submit').each(function(){
+    var theLabel = $(this).attr('value');
+    $(this).attr('placeholder', theLabel);
+    $(this).attr('value', '');
+    // if(theLabel == 'Your Email Address...') $(this).attr('value', '');
+    // if(theLabel == 'Your Phone Number') $(this).attr('value', '');
+    // if(theLabel == 'Your Message') $(this).attr('value', '');
+  });
+  
   // get the action filter option item on page load
   var $filterType = $('#filterOptions li.active a').attr('class');
   // get and assign the ourHolder element to the $holder varible for use later
