@@ -19,6 +19,7 @@ get_header(); ?>
         $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail');
         $job_title = get_post_meta( $post->ID, '_cmb_job_title', true );
         $linkedin = get_post_meta( $post->ID, '_cmb_talent_linkedin', true );
+        $twitter = get_post_meta( $post->ID, '_cmb_talent_twitter', true );
         $imdb = get_post_meta( $post->ID, '_cmb_talent_imdb', true );
         ?>
         <div class="person">
@@ -30,6 +31,7 @@ get_header(); ?>
             <div class="talent_links">
               <?php if($imdb) echo '<a class="imdb" href="'.$imdb.'">IMDB</a>' ?>
               <?php if($linkedin) echo '<a class="linkedin" href="'.$linkedin.'">LinkedIn</a>' ?>
+              <?php if($twitter) echo '<a class="twitter" href="'.$twitter.'">twitter</a>' ?>
             </div>
           </div>
         </div>

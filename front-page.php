@@ -126,7 +126,7 @@ $i = 1;
             <li class="finishing">Finishing</li>
             <li class="lto_data">LTO-5 Data Archiving</li>
             <li class="digital_dalies">Digital Dailies</li>
-            <li class="dcp">Digital Cinema Packaging (DCP)</li>
+            <li class="dcp">Digital Cinema (DCP)</li>
           </ul>
           <a class='more' href='services'>View All Services</a>
         </div>
@@ -134,7 +134,7 @@ $i = 1;
       <div class='col amenities'>
         <div class='inner'>
           <h3>Finest Coffee in the West</h3>
-          <h2>Amenities</h2>
+          <h2>Facility</h2>
           <ul class='cta-list'>
             <li class="theater">DI Theater</li>
             <li class="hd_suites">HD Suites</li>

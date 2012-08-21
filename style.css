@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v1.1.97
+Version: v1.1.98
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -274,7 +274,7 @@ body.work-page .project-highlights .highlights-slideshow ul.navigation li a.sele
 body.work-page .project-details { overflow:hidden; }
 body.work-page .project-details .text-content { float:left;width:575px; }
 body.work-page .project-details .text-content p:first-child { color:#fff;font-size:22px;font-weight:500;margin-bottom:1.5em;line-height:1.25em; }
-body.work-page .project-details dl.overview { float:right;width:315px; }
+body.work-page .project-details dl.overview { float:right; width:315px; }
 body.work-page .project-details dl.overview dt,body.work-page .project-details dl.overview dd { padding-left:25px;line-height:1.25em; }
 body.work-page .project-details dl.overview dt { color:#b6cbd7;padding-top:10px;font-weight:300; }
 body.work-page .project-details dl.overview dd { color:#fff;padding-bottom:10px;border-bottom:1px solid #37393a; }
@@ -283,8 +283,8 @@ body.work-page .project-details dl.overview .colorist { border-left:4px solid #e
 body.work-page .project-details dl.overview .source { border-left:4px solid #9e0f43; }
 body.work-page .project-details dl.overview .director { border-left:4px solid #191b68; }
 body.work-page .project-details dl.overview .cinematographer { border-left:4px solid #297db9; }
-body.work-page .project-details div.imdb { text-align: center; }
-body.work-page .project-details div.imdb a { padding-left: 35px; height: 24px; line-height: 24px; background: url("images/square-imdb.png") 0 0 no-repeat; }
+body.work-page .project-details dl.overview div.imdb_link { text-align: center; float:right; width:315px; margin-top: 20px;}
+body.work-page .project-details dl.overview div.imdb_link a { padding-left: 35px; height: 24px; line-height: 24px; background: url("images/square-imdb.png") 0 0 no-repeat; }
 
 body.work-page .project-details .service_icons { text-align: center; }
 body.work-page .project-details .service_icons img { width: 30px; height: auto; margin: 0 5px;  }
@@ -416,7 +416,7 @@ body.work-page .sub-header .projects-pagination a,
 body.work-page .project-highlights .highlights-slideshow ul.navigation li,
 body.work-page .nivoSlider .nivo-controlNav a,
 ul.services_list li h3,
-body.work-page .project-details div.imdb a
+body.work-page .project-details div.imdb_link a
 { display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline; }  
 
 /*BUTTON BOX-SHADOW*/

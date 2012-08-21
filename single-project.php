@@ -79,10 +79,10 @@ get_header(); ?>
           <dd class='director'><?php echo $p_director; ?></dd>
           <dt class='cinematographer'>Cinematographer</dt>
           <dd class='cinematographer'><?php echo $p_cinematographer ?></dd>
+          <?php if($p_imdb) { ?>
+          <div class="imdb_link"><a href="<?php echo $p_imdb; ?>">IMDB Page</a></div>
+          <?php } ?>
         </dl>
-        <?php if($p_imdb) { ?>
-        <div class="imdb_link"><a href="<?php echo $p_imdb; ?>">IMDB Page</a></div>
-        <?php } ?>
       </div>
       <?php endwhile; ?>
       <?php endif; ?>
