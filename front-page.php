@@ -1,47 +1,54 @@
 <?php get_header('home'); ?>
 <?php 
-  $feature_query = array('numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
-  $service_query = array('posts_per_page'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'ASC','post_type'=> 'service','post_status'=> 'publish');
-  $amenity_query = array('numberposts'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'ASC','post_type'=> 'amenity','post_status'=> 'publish'); 
-  $features = new WP_Query($feature_query);
-  $amenities = new WP_Query($amenity_query);
-  $services = new WP_Query($service_query);
-  $i = 1;
+$i = 1;
 ?>
+
 <div data-active-slide='1' id='feature-slides'>
   <div class='slides'>
-    <!-- Slide Images -->
     <ol class='slide-images'>
     <?php 
-    while ( $features->have_posts() ) : $features->the_post(); 
-      $image_url = kd_mfi_get_featured_image_url('project-feature', 'project', 'full');
-      # $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original');
-      if($image_url) {
-      ?>
-      <li class='slide' data-slide='<?php echo $i ?>' style='background-image: url(<?php echo $image_url; ?>);'>
-        <?php echo get_the_title(); ?> 
-      </li>
-      <?php $i = $i + 1; ?>
-      <?php } ?>
-    <?php endwhile; $i = 1 ?>
+    $slides_query = array('posts_per_page'=> -1, 'numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
+    $feature_slides = new WP_Query($slides_query);
+    if($feature_slides) : while ($feature_slides ->have_posts()) : $feature_slides->the_post(); 
+      $featured_image = kd_mfi_get_featured_image_url('project-featured-image', 'project', 'full');
+      if($featured_image) { ?>
+        <li class='slide' data-slide='<?php echo $i ?>' style='background-image: url(<?php echo $featured_image; ?>);'>
+          <?php echo get_the_title(); ?> 
+        </li>
+        <?php 
+        $i = $i + 1; 
+      }
+    endwhile;
+    endif;
+    rewind_posts();
+    $i = 1;
+    ?>
     </ol>
     <!-- Slide Tabs -->
     <ol class='slide-tabs'>
     <?php 
-    while ( $features->have_posts() ) : $features->the_post(); ?>
-      <?php $image_url = kd_mfi_get_featured_image_url('project-feature', 'project', 'full'); ?>
-      <?php if($image_url) { ?>
-      <li class='slide slide-<?php echo $i; ?>' data-slide='<?php echo $i ?>'><a href="#">Tab <?php echo $i; ?></a></li>
-      <?php $i = $i + 1; ?>
-      <?php } ?>
-    <?php endwhile; $i = 1 ?>
+    $tabs_query = array('posts_per_page'=> -1, 'numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
+    $feature_tabs = new WP_Query($tabs_query);
+    if($feature_tabs) : while ($feature_tabs ->have_posts()) : $feature_tabs->the_post(); 
+      $featured_image_tabs = kd_mfi_get_featured_image_url('project-featured-image', 'project', 'full');
+      if($featured_image_tabs) { ?>
+        <li class='slide slide-<?php echo $i; ?>' data-slide='<?php echo $i ?>'><a href="#">Tab <?php echo $i; ?></a></li>
+        <?php 
+        $i = $i + 1; 
+      } 
+    endwhile; 
+    endif;
+    $i = 1;
+    ?>
     </ol>
   </div>
   <div class='inner-container'>
     <!-- Slide details -->
     <ol class='slide-details'>
-      <?php 
-      while ( $features->have_posts() ) : $features->the_post(); 
+    <?php 
+    $details_query = array('posts_per_page'=> -1, 'numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'project','post_status'=> 'publish'); 
+    $feature_details = new WP_Query($details_query);
+    if($feature_details) : while ($feature_details ->have_posts()) : $feature_details->the_post(); 
       $p_year = get_post_meta( $post->ID, '_cmb_year_completed', true );
       $p_director = get_post_meta( $post->ID, '_cmb_director', true );
       $p_director_imdb = get_post_meta( $post->ID, '_cmb_director-imdb', true );
@@ -53,53 +60,50 @@
       $p_camera = get_the_terms( $post->ID, 'camera');
       $p_genre = get_the_terms( $post->ID, 'genres');
       $p_services = get_the_terms( $post->ID, 'service');
-      ?>
-      <?php $image_url = kd_mfi_get_featured_image_url('project-feature', 'project', 'full'); ?>
-      <?php if($image_url) { ?>
-      <li class='slide' data-slide='<?php echo $i ?>'>
-        <h2>
-          <?php echo get_the_title(); ?> 
-          <span>
-            <?php if($p_year) { echo $p_year; } ?>
-            <?php if($p_genre) { echo $p_genre; } ?>
-          </span>
-        </h2>
-        <div class='cols'>
-          <?php if ($p_colorists) : ?>
-          <div class='col'>
-            <h3 class='title'>Colorist</h3>
-            <div class='details'>
-              <ul>
-                <?php foreach ( $p_colorists as $p_colorist ) { ?>
-                <li><?php echo $p_colorist->name ?></li>
-                <?php } ?>
-              </ul>
-            </div>
-          </div>
-          <?php endif; ?>
-          
-          <!-- <div class='col'>
-            <h3 class='title'>Cinematographer</h3>
-            <div class='details'><?php echo $p_ographer ?></div>
-          </div> -->
-
-          <?php if ($p_services) : ?>
-          <div class='col'>
-            <h3 class='title'>Services</h3>
-            <div class='details'>
-              <ul>
-                  <?php foreach ( $p_services as $p_service ) { ?>
-                  <li><?php echo $p_service->name ?></li>
+      $featured_image_details = kd_mfi_get_featured_image_url('project-featured-image', 'project', 'full');
+      if($featured_image_details) : ?>
+        <li class='slide' data-slide='<?php echo $i ?>'>
+          <h2>
+            <?php echo get_the_title(); ?> 
+            <span>
+              <?php if($p_year) { echo $p_year; } ?>
+              <?php if($p_genre) { foreach($p_genre as $the_genre) echo $the_genre->name; } ?>
+            </span>
+          </h2>
+          <div class='cols'>
+            <?php if($p_colorist) : ?>
+            <div class='col'>
+              <h3 class='title'>Colorist</h3>
+              <div class='details'>
+                <ul>
+                  <?php foreach ( $p_colorist as $the_colorist ) { ?>
+                  <li><?php echo $the_colorist->name; ?></li>
                   <?php } ?>
-              </ul>
+                </ul>
+              </div>
+            </div>
+            <?php endif; ?>
+          
+            <?php if ($p_services) : ?>
+            <div class='col'>
+              <h3 class='title'>Services</h3>
+              <div class='details'>
+                <ul>
+                  <?php foreach ( $p_services as $p_service ) { ?>
+                  <li><?php echo $p_service->name; ?></li>
+                  <?php } ?>
+                </ul>
+            </div>
+            <?php endif; ?>
           </div>
-          <?php endif; ?>
-        </div>
-      </li>
-      <?php $i = $i + 1; ?>
-      <?php } ?>
-      <?php endwhile; $i = 1 ?>
-      <!-- Slide 1 -->
+        </li>
+        <?php 
+        $i = $i + 1;
+      endif;
+    endwhile; 
+    endif;
+    $i = 1;
+    ?>
     </ol>
   </div>
 </div>
@@ -109,8 +113,12 @@
     <div class='cta-columns'>
       <div class='col services'>
         <div class='inner'>
-          <h3>Digital Intermediate & HD Finishing</h3>
+          <h3>Digital Intermediate &amp; HD Finishing</h3>
           <h2>Services</h2>
+          <?php 
+          $service_query = array('posts_per_page'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'ASC','post_type'=> 'service','post_status'=> 'publish');
+          $services = new WP_Query($service_query);
+          ?>
           <ul class='cta-list'>
             <?php while ( $services->have_posts() ) : $services->the_post();  ?>
             <li class="<?php echo $post->post_name; ?>"><?php echo get_the_title(); ?></li>
@@ -123,6 +131,10 @@
         <div class='inner'>
           <h3>Finest Coffee in the West</h3>
           <h2>Amenities</h2>
+          <?php
+          $amenity_query = array('numberposts'=> 5,'offset'=> 0,'orderby'=> 'post_date','order'=> 'ASC','post_type'=> 'amenity','post_status'=> 'publish'); 
+          $amenities = new WP_Query($amenity_query);
+          ?>
           <ul class='cta-list'>
             <?php while ( $amenities->have_posts() ) : $amenities->the_post();  ?>
             <li class="<?php echo $post->post_name; ?>"><?php echo get_the_title(); ?></li>

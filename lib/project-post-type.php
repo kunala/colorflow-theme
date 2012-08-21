@@ -140,7 +140,7 @@ add_filter('cmb_meta_boxes', 'project_metaboxes');
 
 if(class_exists('kdMultipleFeaturedImages')) {
   $args = array(
-    'id' => 'project-feature',
+    'id' => 'project-featured-image',
     'post_type' => 'project',      // Set this to post or page
     'labels' => array(
       'name'      => 'Homepage Image',

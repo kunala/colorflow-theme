@@ -57,7 +57,7 @@ get_header();
         <li class='item' data-type='<?php if($p_genre) foreach($p_genre as $genre) echo $genre->slug ?>' data-id="id-<?php echo $i; ?>">
           <a class="click" href="<?php echo get_permalink() ?>"> </a>
           <div class='image'>
-            <?php echo gallery_first_image($post->ID) ?>
+            <?php echo get_the_post_thumbnail($post->ID, 'grid-thumb')?>
           </div>
           <div class='details'>
             <h3><span><?php the_title(); ?></span></h3>      
