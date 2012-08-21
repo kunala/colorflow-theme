@@ -41,6 +41,11 @@ get_header();
         the_content(); 
         endwhile;
         ?>
+        <div class="clear"> </div>
+        <div id="thanks">
+          <h3>Thanks!</h3>
+          <p>We’ve received your message through the internet tubes and a Colorflow team member will be in touch soon.</p>
+        </div>
       </div>
     </div>
     <?php get_sidebar(); ?>

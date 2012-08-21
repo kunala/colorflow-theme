@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v1.1.99
+Version: v2.0.0
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -86,7 +86,7 @@ h2.page-heading { color:#a3b7c2;font-size:30px;font-weight:100;margin-bottom:25p
 
 body.two-column #content { *zoom:1;width:960px;margin:0 auto;padding-bottom:50px; }
 body.two-column #content:after { content:"";display:table;clear:both; }
-body.two-column #content #primary { float:left;width:575px;padding-right:65px;border-right:1px solid rgba(255,255,255,0.1); }
+body.two-column #content #primary { float:left;width:577px;padding-right:65px;border-right:1px solid rgba(255,255,255,0.1); }
 body.two-column #content #secondary { float:right;width:275px; }
 body.two-column #content #secondary aside.widget { padding-bottom:25px;margin-bottom:25px;border-bottom:2px solid rgba(255,255,255,0.08); }
 body.two-column #content #secondary .subsection:last-child { padding-bottom:0px;margin-bottom:0px;border-bottom:none; }
@@ -165,18 +165,19 @@ body#home .cta-columns .col .inner { margin-left:47px; }
 body#home .cta-columns .col h3 { color:#a2b4bf;font-size:12px;text-transform:uppercase; }
 body#home .cta-columns .col h2 { color:#d5d7da;font-size:24px;font-weight:500;margin-bottom:30px; }
 body#home .cta-columns .col ul { margin-bottom:20px; }
-body#home .cta-columns .col li { padding-left:40px;font-size:16px;line-height:36px;background:0 center no-repeat; }
+body#home .cta-columns .col li { padding-left:45px;font-size:16px;line-height:36px;background:0 center no-repeat; }
 
 body#home .col.services ul li.di_color { background-image:url("images/icons/services_grading.png"); }
 body#home .col.services ul li.finishing { background-image:url("images/icons/services_hd.png"); }
-body#home .col.services ul li.lto_data { background-image:url("images/icons/services_archiving.png"); }
+body#home .col.services ul li.lto_data { background-image:url("images/icons/services_archiving.png"); background-position: 6px 7px; }
 body#home .col.services ul li.digital_dalies { background-image:url("images/icons/services_proxies.png"); }
 body#home .col.services ul li.dcp { background-image:url("images/icons/services_red.png"); }
 
+body#home .col.amenities ul li { background-position: 2px 6px; }
 body#home .col.amenities ul li.hd_suites { background-image:url("images/icons/amenities_gallery.png"); }
-body#home .col.amenities ul li.theater { background-image:url("images/icons/amenities_di.png"); }
+body#home .col.amenities ul li.theater { background-image:url("images/icons/amenities_hd_theater.png"); background-position: 2px 6px; }
 body#home .col.amenities ul li.parking { background-image:url("images/icons/amenities_parking.png"); }
-body#home .col.amenities ul li.near-food { background-image:url("images/icons/amenities_gourmet.png"); }
+body#home .col.amenities ul li.near_food { background-image:url("images/icons/amenities_gourmet.png"); }
 body#home .col.amenities ul li.transportation { background-image:url("images/icons/amenities_transportation.png"); }
 
 body#home #content .cta-columns .col.services a.more,
@@ -352,7 +353,10 @@ body#contact .contact_form input[type="text"] { width: 100%; height: 42px; box-s
 body#contact .contact_form textarea { width: 100%; height: 156px; box-sizing: border-box; margin-bottom: 10px; padding: 8px; }
 body#contact .contact_form input[type="submit"] { width: 100%; }
 body#contact #secondary aside.widget.location { display: none; }
-
+body#contact #thanks { width: 577px; height: 205px; background: url("images/thanks-bg.png") no-repeat; padding: 40px 50px; box-sizing: border-box; clear: both; }
+body#contact #thanks h3 { color: #8A9AA2; font-size: 28px; font-weight: 500; }
+body#contact #thanks p { font-size: 18px; line-height: 1.5em; color: #fff; font-weight: 100; margin-top: 20px; }
+body#contact #thanks { display: none; }
 #comments { }
 h2.comments-title { }
 h2.comments-title span { }
@@ -475,9 +479,9 @@ span.wpcf7-not-valid-tip {
 input.wpcf7-not-valid { background: magenta !important; }
 
 ul.services_list { margin-top: 30px; }
-ul.services_list li { padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
-ul.services_list li img { vertical-align: middle; margin-right: 20px; }
-ul.services_list li h3 { font-size: 26px; font-weight: 500; margin-bottom: 10px; color: white; line-height: 1em; margin-bottom: 0px; }
-ul.services_list li .text-content { padding-left: 86px; }
+ul.services_list li { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+ul.services_list li img { vertical-align: middle; margin-right: 15px; width: 45px; height: auto; }
+ul.services_list li h3 { font-size: 22px; font-weight: 500; margin-bottom: 10px; color: white; line-height: 1em; margin-bottom: 0px; }
+ul.services_list li .text-content { padding-left: 65px; }
 
 aside#advanced-recent-posts-2 { display: none; }
