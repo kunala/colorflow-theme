@@ -131,6 +131,22 @@ function project_metaboxes( array $meta_boxes ) {
 	      'id' => $prefix . 'file_list',
 	      'type' => 'file_list',
       ),
+      array(
+        'name' => 'Feature Focused',
+        'desc' => 'Upload an image or enter an URL.',
+        'id' => $prefix . 'focused_image',
+        'type' => 'file',
+        'save_id' => true, // save ID using true
+        'allow' => array('attachment') // limit to just attachments with array( 'attachment' )
+      ),
+      array(
+        'name' => 'Feature Blur',
+        'desc' => 'Upload an image or enter an URL.',
+        'id' => $prefix . 'blur_image',
+        'type' => 'file',
+        'save_id' => true, // save ID using true
+        'allow' => array('attachment') // limit to just attachments with array( 'attachment' )
+      ),
 		),
 	);
 	// Add other metaboxes as needed
@@ -138,19 +154,18 @@ function project_metaboxes( array $meta_boxes ) {
 }
 add_filter('cmb_meta_boxes', 'project_metaboxes');
 
-if(class_exists('kdMultipleFeaturedImages')) {
-  $args = array(
-    'id' => 'project-featured-image',
-    'post_type' => 'project',      // Set this to post or page
-    'labels' => array(
-      'name'      => 'Homepage Image',
-      'set'       => 'Set homepage image',
-      'remove'    => 'Remove homepage image',
-      'use'       => 'Use as homepage image',
-    )
-  );
-  new kdMultipleFeaturedImages( $args );
-}
-
+// if(class_exists('kdMultipleFeaturedImages')) {
+//   $args = array(
+//     'id' => 'project-featured-image',
+//     'post_type' => 'project',      // Set this to post or page
+//     'labels' => array(
+//       'name'      => 'Homepage Image',
+//       'set'       => 'Set homepage image',
+//       'remove'    => 'Remove homepage image',
+//       'use'       => 'Use as homepage image',
+//     )
+//   );
+//   new kdMultipleFeaturedImages( $args );
+// }
 
 ?>

@@ -52,7 +52,6 @@ get_header();
         $p_camera = get_the_terms( $post->ID, 'camera');
         $p_genre = get_the_terms( $post->ID, 'genres');
         $p_services = get_the_terms( $post->ID, 'service');
-        $image_url = gallery_first_image($post->ID);
         ?>
         <li class='item' data-type='<?php if($p_genre) foreach($p_genre as $genre) echo $genre->slug ?>' data-id="id-<?php echo $i; ?>">
           <a class="click" href="<?php echo get_permalink() ?>"> </a>

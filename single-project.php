@@ -3,6 +3,8 @@ global $pageID;
 global $pageClass;
 global $page;
 global $numpages;
+global $query_string;
+query_posts( $query_string . '&posts_per_page =-1' );
 $pageClass = "work-page";
 $pageID = "project";
 get_header(); ?>
@@ -15,17 +17,21 @@ get_header(); ?>
           <span class='section'>Work /</span>
           <span class='subsection'><?php echo get_the_title(); ?></span>
         </h2>
-
         <div class='projects-pagination'>
           <?php turing_content_nav( 'nav-above' ); ?>
         </div>
       </div>
       <?php
+        $grid_thumb = get_post_thumbnail_id( $post->ID );
+        $focused = get_post_meta($post->ID, '_cmb_focused_image_id', true);
+        $blurred = get_post_meta($post->ID, '_cmb_blur_image_id', true);
+        $excluded = array($grid_thumb, $focused, $blurred);
         $args = array(
           'post_type' => 'attachment',
           'numberposts' => null,
           'post_status' => null,
-          'post_parent' => $post->ID
+          'post_parent' => $post->ID,
+          'exclude' => $excluded
         ); 
         $attachments = get_posts($args);
         if ($attachments) {

@@ -9,7 +9,7 @@ $pageID = "services";
 get_header();
 ?>
 <?php 
-  $custom_query = array('numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'service','post_status'=> 'publish'); 
+  $custom_query = array('posts_per_page'=> -1, 'numberposts'=> 0,'offset'=> 0,'orderby'=> 'post_date','order'=> 'DESC','post_type'=> 'service','post_status'=> 'publish'); 
   $custom = new WP_Query($custom_query);
 ?>
  <div id='content'>

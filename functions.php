@@ -15,7 +15,6 @@ if ( ! isset( $content_width ) ) $content_width = 640; /* pixels */
 // update_option('siteurl','http://colorflow.wp');
 // update_option('home','http://colorflow.wp');
 
-
 require( get_template_directory().'/lib/talent-post-type.php' );
 require( get_template_directory().'/lib/services-post-type.php' );
 require( get_template_directory().'/lib/amenity-post-type.php' );
@@ -92,13 +91,6 @@ function turing_scripts() {
   // }
 }
 add_action( 'wp_enqueue_scripts', 'turing_scripts' );
-
-function gallery_first_image($post){		
-	global $post;
-	$args = array( 'post_type'=>'attachment','numberposts'=>1,'post_parent'=>$post->ID,'order'=>'ASC','orderby'=>'menu_order','post_mime_type'=>'image');
-	$attachments = get_posts($args);
-	if ( $attachments )	{	foreach ( $attachments as $attachment )	{	return wp_get_attachment_image($attachment->ID, 'grid-thumb'); } }
-}
 
 add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
 /*** Initialize the metabox class. */
