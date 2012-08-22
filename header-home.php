@@ -29,7 +29,7 @@
 
 <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/images/CLO_Twitter_Icon.png"/>
 <meta property="og:title" content="colorflow"/>
-<meta property="og:url" content="http://colorflow"/>
+<meta property="og:url" content="http://colorflow.com"/>
 <meta property="og:site_name" content="Colorflow a next generation post production for Film, Broadcast, and the Web."/>
 <meta property="og:type" content="website"/>
 
