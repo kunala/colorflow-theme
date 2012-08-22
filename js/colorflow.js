@@ -14,17 +14,20 @@
         return hovering = false;
       });
       setActive = function() {
+        console.log('setActive');
         $allSlides.removeClass("active");
         return $("[data-slide=" + activeSlide + "]", scope).addClass("active");
       };
       slide = function() {
         if (!hovering) {
+          console.log('slide');
           setActive();
-          if (activeSlide === slideCount) {
+          if (activeSlide >= slideCount) {
             activeSlide = 1;
           } else {
             activeSlide = parseInt(activeSlide) + 1;
           }
+          console.log(activeSlide);
         }
         return setTimeout(slide, speed);
       };
