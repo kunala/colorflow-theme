@@ -23,7 +23,7 @@ function project_post_type() {
 		'show_ui' => true,
 		'query_var' => true,
 		'rewrite' => array('slug' => 'project'),
-		'capability_type' => 'post',
+		'capability_type' => 'page',
 		'hierarchical' => false,
 		'menu_position' => null,
 		'supports' => array('title','editor','thumbnail','tag'),

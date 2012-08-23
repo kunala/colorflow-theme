@@ -45,6 +45,30 @@
 
 
 jQuery(document).ready(function($) {
+  // GOOGLE MAP
+  function map_init() {
+    var mapOptions = {
+      center: new google.maps.LatLng(37.858337,-122.290299),
+      disableDefaultUI: true,
+      zoom: 16,
+      panControl: false,
+      zoomControl: true,
+      scaleControl: false,
+      mapTypeControl: false,
+      streetViewControl: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+    var myLatlng = new google.maps.LatLng(37.858337,-122.290299);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      color: "purple",
+      title:"colorflow"
+    });
+  }
+  if($('body').hasClass('contact-page')) map_init();
+  
   activePage = location.href;
   $('nav.main-navigation a').each(function(){
      if ($(this).attr('href') == activePage) {

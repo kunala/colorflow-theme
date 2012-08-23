@@ -1,17 +1,16 @@
 <?php 
 global $pageID;
 global $pageClass;
-global $page;
-global $numpages;
-global $query_string;
-query_posts( $query_string . '&posts_per_page =-1' );
 $pageClass = "work-page";
 $pageID = "project";
+$the_page = (get_query_var('paged')) ? get_query_var('paged') : 1; 
+query_posts($query_string."&posts_per_page=1&paged='.$paged.'");
+
 get_header(); ?>
   <div id='content' role="main">
     <div id='primary' class="site-content">
-      <?php if ( have_posts() ) : ?>
-      <?php while ( have_posts() ) : the_post(); ?>
+      <?php if ( have_posts() ) : 
+      while ( have_posts() ) : the_post(); ?>
       <div class='sub-header'>
         <h2 class='page-heading'>
           <span class='section'>Work /</span>

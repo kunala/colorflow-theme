@@ -20,11 +20,11 @@ function turing_content_nav( $nav_id ) {
 	global $num_projects;
 	global $wp_query;
 	$num_projects = wp_count_posts('project')->publish;
-	$project = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$project = (get_query_var('page')) ? get_query_var('page') : 1;
+	# $project = $page;
 	$nav_class = 'site-navigation paging-navigation';
 	if ( is_single() )
 		$nav_class = 'site-navigation post-navigation';
-	  
 		// echo $num_projects;
 	?>
 	<h2 style="font-size: 40px;"><?php  ?></h2>

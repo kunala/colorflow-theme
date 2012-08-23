@@ -24,7 +24,7 @@
             <p><a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></p>
             <h4><?php echo $t_options['company_address_1']; ?></h4>
             <p>
-              <?php echo $t_options['company_address_2'].' '.$t_options['company_address_2b'];; ?>
+              <?php echo $t_options['company_address_2'].' Ste.'.$t_options['company_address_2b'];; ?>
               <br/>
               <?php echo $t_options['company_address_3']; ?>
             </p>

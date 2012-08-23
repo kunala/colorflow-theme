@@ -90,14 +90,12 @@ $i = 1;
             </div>
             <?php endif; ?>
           
-            <?php if ($p_services) : ?>
+            <?php if ($p_cinematographer) : ?>
             <div class='col'>
-              <h3 class='title'>Services</h3>
+              <h3 class='title'>Cinematographer</h3>
               <div class='details'>
                 <ul>
-                  <?php foreach ( $p_services as $p_service ) { ?>
-                  <li><?php echo $p_service->name; ?></li>
-                  <?php } ?>
+                  <li><?php echo $p_cinematographer; ?></li>
                 </ul>
             </div>
             <?php endif; ?>
@@ -155,7 +153,7 @@ $i = 1;
           <p><a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></p>
           <h4><?php echo $t_options['company_address_1']; ?></h4>
           <p>
-            <?php echo $t_options['company_address_2'].' '.$t_options['company_address_2b'];; ?>
+            <?php echo $t_options['company_address_2'].' Ste. '.$t_options['company_address_2b'];; ?>
             <br/>
             <?php echo $t_options['company_address_3']; ?>
           </p>
