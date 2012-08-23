@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
     var mapOptions = {
       center: new google.maps.LatLng(37.858337,-122.290299),
       disableDefaultUI: true,
-      zoom: 16,
+      zoom: 14,
       panControl: false,
       zoomControl: true,
       scaleControl: false,

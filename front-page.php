@@ -71,7 +71,7 @@ $i = 1;
       if($focused_ID) : ?>
         <li class='slide' data-slide='<?php echo $i ?>'>
           <h2>
-            <?php echo get_the_title(); ?> 
+            <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a>
             <span>
               <?php if($p_genre) { foreach($p_genre as $the_genre) echo $the_genre->name; } ?>
             </span>

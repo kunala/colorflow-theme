@@ -31,6 +31,7 @@
 <meta property="og:title" content="colorflow"/>
 <meta property="og:url" content="http://colorflow.com"/>
 <meta property="og:site_name" content="Colorflow a next generation post production for Film, Broadcast, and the Web."/>
+<meta property="og:description" content="Colorflow a next generation post production for Film, Broadcast, and the Web."/>
 <meta property="og:type" content="website"/>
 
 <script type='text/javascript' src='http://use.typekit.com/nxy6drw.js'> </script>
