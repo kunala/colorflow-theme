@@ -15,8 +15,8 @@
 <title>
   <?php
 	global $page, $paged;
-	wp_title( '|', true, 'right' );
 	bloginfo( 'name' );
+	wp_title( ' | ', true, 'left' );
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) ) echo " | $site_description";
 	if ( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'turing' ), max( $paged, $page ) );

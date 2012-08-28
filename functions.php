@@ -103,8 +103,8 @@ function cmb_initialize_cmb_meta_boxes() {
 // set_post_thumbnail_size( $width, $height, $crop );
 add_image_size( 'billboard', 1360, 9999, false );
 add_image_size( 'grid-thumb', 316, 178, true );
-add_image_size( 'gallery', 956, 396, true );
-set_post_thumbnail_size( 150, 150 );
+add_image_size( 'gallery', 956, 396, false );
+
 // update_option('thumbnail_size_w', 160);
 // update_option('thumbnail_size_h', 160);
 // update_option('thumbnail_crop', 1);

@@ -34,15 +34,13 @@
 <meta property="og:description" content="Colorflow a next generation post production for Film, Broadcast, and the Web."/>
 <meta property="og:type" content="website"/>
 
-<script type='text/javascript' src='http://use.typekit.com/nxy6drw.js'> </script>
+<script src='http://use.typekit.com/nxy6drw.js'> </script>
 <script type='text/javascript'>
   //<![CDATA[
     try{Typekit.load();}catch(e){}
   //]]>
 </script>
-<?php 
-wp_head(); 
-?>
+<?php wp_head(); ?>
 </head>
 <body id="<?php echo $pageID; ?>" class="<?php echo $pageClass; ?>">
   <div id='wrapper'>

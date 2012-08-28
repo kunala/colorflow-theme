@@ -5,37 +5,24 @@
  * @package turing
  * @since turing 1.0
  */
-
+global $pageID;
+global $pageClass;
+$pageClass = "two-column";
+$pageID = "search-results";
 get_header(); ?>
-
-		<section id="primary" class="site-content">
-			<div id="content" role="main">
-
-			<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'turing' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</header>
-
-				<?php turing_content_nav( 'nav-above' ); ?>
-
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php get_template_part( 'content', 'search' ); ?>
-
-				<?php endwhile; ?>
-
-				<?php turing_content_nav( 'nav-below' ); ?>
-
-			<?php else : ?>
-
-				<?php get_template_part( 'no-results', 'search' ); ?>
-
-			<?php endif; ?>
-
-			</div><!-- #content -->
-		</section><!-- #primary .site-content -->
-
-<?php get_sidebar(); ?>
+<div id="content" role="main">
+  <div id="primary" class="site-content">
+    <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'turing' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+    <?php if ( have_posts() ) : ?>
+	  <?php while ( have_posts() ) : the_post(); ?>
+	  <?php get_template_part( 'content', 'search' ); ?>
+	  <?php get_search_form(); ?>
+	  <?php endwhile; ?>
+	  <?php turing_content_nav( 'nav-below' ); ?>
+		<?php else : ?>
+		<?php get_template_part( 'no-results', 'search' ); ?>
+		<?php endif; ?>
+	</div>
+  <?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>
