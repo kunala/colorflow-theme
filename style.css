@@ -449,7 +449,7 @@ body.work-page .nivoSlider .nivo-controlNav a,
 ul.services_list li h3,
 body.work-page .project-details div.imdb_link a,
 body.work-page .project-details dl.overview .links a 
-{ display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline; height: auto !important; }  
+{ display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline; }  
 
 /*BUTTON BOX-SHADOW*/
 #header .navigation nav.main-navigation a.current,
