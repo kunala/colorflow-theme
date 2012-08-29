@@ -25,9 +25,9 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="icon" type="image/x-icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.png">
-<link rel="image_src" href="<?php echo get_template_directory_uri() ?>/images/CLO_Twitter_Icon.png" />
+<!-- <link rel="image_src" href="<?php echo get_template_directory_uri() ?>/images/CLO_Twitter_Icon.png" /> -->
 
-<meta content="http://colorflow.com/colorflow-icon.jpg" property="og:image"/>
+<meta content="<?php echo get_template_directory_uri() ?>/images/colorflow-icon.jpg" property="og:image"/>
 <meta content="colorflow" property="og:title"/>
 <meta content="http://colorflow.com" property="og:url"/>
 <meta content="Colorflow a next generation post production for Film, Broadcast, and the Web." property="og:site_name"/>
