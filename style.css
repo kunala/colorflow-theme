@@ -4,7 +4,7 @@ Theme URI: http://colorflow.com/
 Github Theme URI: https://github.com/bnicholas/colorflow-theme
 Description: theme for colorflow.com
 Author: turing
-Version: v2.0.52
+Version: v2.0.53
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
@@ -35,7 +35,7 @@ em { text-decoration: italic; }
 a { color:#b6cbd7;text-decoration:none; }
 .inner-container { width:960px;margin:0 auto; }
 #header { background:rgba(0,0,0,0.2);border-bottom:1px solid rgba(0,0,0,0.3);padding: 35px 0;margin-bottom:56px; }
-body#home #header { background:transparent;border-bottom:none;padding:50px 0;margin-bottom:0; }
+body#home #header { background:transparent;border-bottom:none;padding:40px 0 60px 0;margin-bottom:0; }
 #header .navigation { overflow:hidden; }
 #header .navigation { height: 40px; }
 body#home #header .navigation { height:29px; }
@@ -59,7 +59,7 @@ body#home #header .navigation nav.social-navigation { float:right; position: rel
 #header .navigation nav.main-navigation li { margin-right:30px; }
 #header .navigation nav.main-navigation li:last-child { margin-right:0; }
 #header .navigation nav.social-navigation .heading { color:#535d64;margin-left:3px;font-size:12px; }
-#header header.main-header { margin-top:100px; margin-bottom: 0px; }
+#header header.main-header { margin-top:90px; margin-bottom: 0px; }
 #header header.main-header h1 { width:268px;height:48px;background:url("images/logo.png") 0 0 no-repeat;text-indent:-999em;margin-bottom:20px; }
 #header header.main-header p { font-size:30px;font-weight:100; }
 
@@ -117,7 +117,7 @@ body.two-column #content #secondary aside.advanced_recent_posts_widget li p.post
 body#home #wrapper { background:#0f1012 url("images/bg.jpg") center top no-repeat; }
 
 body#home #feature-slides { position:relative;min-width:960px; }
-body#home #feature-slides ol.slide-images { -webkit-transition:height 0.5s ease-in-out;-moz-transition:height 0.5s ease-in-out;-o-transition:height 0.5s ease-in-out;transition:height 0.5s ease-in-out;position:relative;height:220px; }
+body#home #feature-slides ol.slide-images { -webkit-transition:height 0.5s ease-in-out;-moz-transition:height 0.5s ease-in-out;-o-transition:height 0.5s ease-in-out;transition:height 0.5s ease-in-out;position:relative;height:213px; }
 body#home #feature-slides ol.slide-images li.slide { -webkit-transition:opacity 0.5s ease-in-out;-moz-transition:opacity 0.5s ease-in-out;-o-transition:opacity 0.5s ease-in-out;transition:opacity 0.5s ease-in-out;background:top center no-repeat;position:absolute;text-indent:-999em;top:0;right:0;bottom:0;left:0; }
 body#home #feature-slides ol.slide-images li.slide { filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);opacity:0; background-position: bottom left; }
 body#home #feature-slides ol.slide-images li.slide .blur { height: 60px; width: 100%; position: absolute; top: 0; left: 0; right: 0;  }
@@ -143,7 +143,7 @@ body#home #feature-slides ol.slide-tabs li.slide:nth-child(10n+7) a { background
 body#home #feature-slides ol.slide-tabs li.slide:nth-child(10n+8) a { background-color:#191b68; }
 body#home #feature-slides ol.slide-tabs li.slide:nth-child(10n+9) a { background-color:#1f4592; }
 body#home #feature-slides ol.slide-tabs li.slide:nth-child(10n+10) a { background-color:#297db9; }
-body#home #feature-slides ol.slide-details { position:relative;height:100px; }
+body#home #feature-slides ol.slide-details { position:relative;height:100px; padding-top: 6px; }
 body#home #feature-slides ol.slide-details li.slide { -webkit-transition:opacity 0.5s ease-in-out;-moz-transition:opacity 0.5s ease-in-out;-o-transition:opacity 0.5s ease-in-out;transition:opacity 0.5s ease-in-out;position:absolute;width:960px; }
 body#home #feature-slides ol.slide-details li.slide { filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);opacity:0; }
 body#home #feature-slides ol.slide-details li.slide.active { filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);opacity:1; z-index: 999;}
@@ -161,17 +161,17 @@ body#home #feature-slides ol.slide-details li.slide .col .details { -webkit-box-
 body#home #feature-slides ol.slide-details li.slide .col h3 { color:#b5cad7; }
 body#home #feature-slides ol.slide-details li.slide .col .details { color:#ffffff; }
 body#home #feature-slides:hover ol.slide-images { height:312px; }
-body#home #content { background:rgba(255,255,255,0.1);border-top:1px solid #000;border-bottom:1px solid #000;padding:20px 0; }
+body#home #content { background:rgba(255,255,255,0.1);border-top:1px solid #000;border-bottom:1px solid #000;padding: 60px 0 30px 0; }
 body#home #content .cta-columns { overflow:hidden; }
 body#home #content .cta-columns .col { float:left;width:320px; }
 body#home #content .cta-columns .col .inner { border-right:1px solid rgba(255,255,255,0.05); }
 body#home #content .cta-columns .col:last-child .inner { border-right:none; }
 
 body#home .cta-columns .col .inner { margin-left:47px; }
-body#home .cta-columns .col h3 { color:#a2b4bf;font-size:12px;text-transform:uppercase; }
-body#home .cta-columns .col h2 { color:#d5d7da;font-size:24px;font-weight:500;margin-bottom:30px; }
+body#home .cta-columns .col h3 { color:#a2b4bf;font-size:12px;text-transform:uppercase; margin-bottom: 3px; }
+body#home .cta-columns .col h2 { color:#d5d7da;font-size:24px;font-weight:500;margin-bottom:25px; }
 body#home .cta-columns .col ul { margin-bottom:20px; }
-body#home .cta-columns .col li { padding-left:45px;font-size:16px;line-height:36px;background:0 center no-repeat; }
+body#home .cta-columns .col li { padding-left:45px;font-size:16px;line-height:36px;background:0 center no-repeat; font-weight: 100;  }
 
 body#home .col.services ul li.di_color { background-image:url("images/icons/services_grading.png"); }
 body#home .col.services ul li.finishing { background-image:url("images/icons/services_finishing.png"); }
@@ -179,7 +179,7 @@ body#home .col.services ul li.lto_data { background-image:url("images/icons/serv
 body#home .col.services ul li.digital_dalies { background-image:url("images/icons/services_dalies.png"); }
 body#home .col.services ul li.dcp { background-image:url("images/icons/services_dcp.png"); }
 
-body#home .col.amenities ul li { background-position: 6px 6px; }
+body#home .col.amenities ul li { background-position: 6px 6px;  }
 body#home .col.amenities ul li.hd_suites { background-image:url("images/icons/services_hd.png");  background-position: 6px 9px; }
 body#home .col.amenities ul li.theater { background-image:url("images/icons/amenities_hd_theater.png"); background-position: 2px 6px; }
 body#home .col.amenities ul li.parking { background-image:url("images/icons/amenities_parking.png"); background-position: 7px 6px; }
