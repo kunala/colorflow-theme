@@ -62,30 +62,42 @@ get_header(); ?>
           <?php the_content(); ?>
         </div>
         <dl class='overview'>
+          <?php if($p_services) { ?>
           <dt class='services'>Services</dt>
           <dd class='services'>
             <ul>
-            <?php if($p_services) foreach($p_services as $service) 
+            <?php foreach($p_services as $service) 
               echo '<li>'.get_the_post_thumbnail($service->term_id).' '.$service->name.'<li/>'
             ?>
             </ul>
           </dd>
+          <?php } ?>
+          <?php if($p_colorist) { ?>
           <dt class='colorist'>Colorist</dt>
           <dd class='colorist'>
-            <?php if($p_colorist) foreach($p_colorist as $colorist) echo "<a href='".get_permalink($colorist->term_id)."'>".$colorist->name."</a>"; ?>
+            <?php foreach($p_colorist as $colorist) echo "<a href='".get_permalink($colorist->term_id)."'>".$colorist->name."</a>"; ?>
             <?php # if($p_colorist) foreach($p_colorist as $colorist) print_r($colorist); ?>
           </dd>
+          <?php } ?>
+          <?php if($p_camera) { ?>
           <dt class='source'>Source</dt>
-          <dd class='source'><?php if($p_camera) foreach($p_camera as $camera) echo $camera->name ?></dd>
+          <dd class='source'><?php foreach($p_camera as $camera) echo $camera->name.'<br/>'?></dd>
+          <?php } ?>
+          <?php if($p_director) { ?>
           <dt class='director'>Director</dt>
           <dd class='director'><?php echo $p_director; ?></dd>
+          <?php } ?>
+          <?php if($p_cinematographer) { ?>
           <dt class='cinematographer'>Cinematographer</dt>
           <dd class='cinematographer'><?php echo $p_cinematographer ?></dd>
+          <?php } ?>
+          <?php if($p_imdb || $p_website) { ?>
           <dt class='links'>Links</dt>
           <dd class='links'>
             <?php if($p_imdb) echo '<a class="imdb" href="'.$p_imdb.'">IMDB</a>' ?>
             <?php if($p_website) echo '<a class="website" href="'.$p_website.'">Website</a>' ?>
           </dd>
+          <?php } ?>
         </dl>
       </div>
       <?php endwhile; ?>
