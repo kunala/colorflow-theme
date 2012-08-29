@@ -119,3 +119,10 @@ add_image_size( 'gallery', 956, 396, false );
 //  wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/stylesheets/admin.css' );
 // }
 // add_action('admin_print_styles', 'admin_css' );
+
+// CUSTOM CONTACT FORM 7 LOADER
+/* Custom ajax loader */
+add_filter('wpcf7_ajax_loader', 'my_wpcf7_ajax_loader');
+  function my_wpcf7_ajax_loader () {
+  return get_bloginfo('stylesheet_directory') . '/images/ajax-loader.gif';
+}
