@@ -25,14 +25,14 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="icon" type="image/x-icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.png">
-<link rel="image_src" href="<?php echo get_template_directory_uri() ?>/images/CLO_Twitter_Icon.png" />
+<link rel="image_src" href="<?php echo get_template_directory_uri() ?>/images/colorflow-icon.jpg" />
 
-<meta property="og:image" content="<?php echo get_template_directory_uri() ?>/images/CLO_Twitter_Icon.png"/>
-<meta property="og:title" content="colorflow"/>
-<meta property="og:url" content="http://colorflow.com"/>
-<meta property="og:site_name" content="Colorflow a next generation post production for Film, Broadcast, and the Web."/>
-<meta property="og:description" content="Colorflow a next generation post production for Film, Broadcast, and the Web."/>
-<meta property="og:type" content="website"/>
+<meta content="<?php echo get_template_directory_uri() ?>/images/colorflow-icon.jpg" property="og:image"/>
+<meta content="colorflow" property="og:title"/>
+<meta content="http://colorflow.com" property="og:url"/>
+<meta content="Colorflow a next generation post production for Film, Broadcast, and the Web." property="og:site_name"/>
+<meta content="Colorflow a next generation post production for Film, Broadcast, and the Web." property="og:description"/>
+<meta content="website" property="og:type"/>
 
 <script src='http://use.typekit.com/nxy6drw.js'> </script>
 <script type='text/javascript'>
