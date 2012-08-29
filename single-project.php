@@ -54,19 +54,22 @@ get_header(); ?>
       $p_camera = get_the_terms( $post->ID, 'camera');
       $p_genre = get_the_terms( $post->ID, 'genres');
       $p_services = get_the_terms( $post->ID, 'service');
-      $p_imdb = get_post_meta($post->ID, '_cmb_project_imdb', true)
+      $p_imdb = get_post_meta($post->ID, '_cmb_project_imdb', true);
+      $p_website = get_post_meta($post->ID, '_cmb_project_website', true);
       ?>
       <div class='project-details'>
         <div class='text-content'>
           <?php the_content(); ?>
-          <?php # foreach($p_services as $service) print_r($service); ?>
-          <div class="service_icons">
-            <?php if($p_services) foreach($p_services as $service) echo get_the_post_thumbnail($service->term_id); ?>
-          </div>
         </div>
         <dl class='overview'>
           <dt class='services'>Services</dt>
-          <dd class='services'><?php if($p_services) foreach($p_services as $service) echo $service->name.'<br/>' ?></dd>
+          <dd class='services'>
+            <ul>
+            <?php if($p_services) foreach($p_services as $service) 
+              echo '<li>'.get_the_post_thumbnail($service->term_id).' '.$service->name.'<li/>'
+            ?>
+            </ul>
+          </dd>
           <dt class='colorist'>Colorist</dt>
           <dd class='colorist'>
             <?php if($p_colorist) foreach($p_colorist as $colorist) echo "<a href='".get_permalink($colorist->term_id)."'>".$colorist->name."</a>"; ?>
@@ -78,9 +81,11 @@ get_header(); ?>
           <dd class='director'><?php echo $p_director; ?></dd>
           <dt class='cinematographer'>Cinematographer</dt>
           <dd class='cinematographer'><?php echo $p_cinematographer ?></dd>
-          <?php if($p_imdb) { ?>
-          <div class="imdb_link"><a href="<?php echo $p_imdb; ?>">IMDB Page</a></div>
-          <?php } ?>
+          <dt class='links'>Links</dt>
+          <dd class='links'>
+            <?php if($p_imdb) echo '<a class="imdb" href="'.$p_imdb.'">IMDB</a>' ?>
+            <?php if($p_website) echo '<a class="website" href="'.$p_website.'">Website</a>' ?>
+          </dd>
         </dl>
       </div>
       <?php endwhile; ?>

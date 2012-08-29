@@ -290,13 +290,18 @@ body.work-page .project-details dl.overview { float:right; width:315px; }
 body.work-page .project-details dl.overview dt,body.work-page .project-details dl.overview dd { padding-left:25px;line-height:1.25em; }
 body.work-page .project-details dl.overview dt { color:#b6cbd7;padding-top:10px;font-weight:300; }
 body.work-page .project-details dl.overview dd { color:#fff;padding-bottom:10px;border-bottom:1px solid #37393a; }
+body.work-page .project-details dl.overview .services ul li { padding-top: 5px; }
+body.work-page .project-details dl.overview .services ul li img { width: 25px; height: auto; vertical-align: middle; margin-right: 5px; }
 body.work-page .project-details dl.overview .services { border-left:4px solid #e08e17; }
 body.work-page .project-details dl.overview .colorist { border-left:4px solid #e9107a; }
 body.work-page .project-details dl.overview .source { border-left:4px solid #9e0f43; }
+body.work-page .project-details dl.overview .links { border-left:4px solid #21A9AC; }
+body.work-page .project-details dl.overview .links a { margin: 10px 10px 0 0; padding-left: 35px; height: 24px; line-height: 24px; background-repeat: no-repeat; background-position: 0 0; }
+body.work-page .project-details dl.overview .links a.imdb { background-image: url("images/square-imdb.png"); }
+body.work-page .project-details dl.overview .links a.website { background-image: url("images/square-website.png"); }
+
 body.work-page .project-details dl.overview .director { border-left:4px solid #191b68; }
 body.work-page .project-details dl.overview .cinematographer { border-left:4px solid #297db9; }
-body.work-page .project-details dl.overview div.imdb_link { text-align: center; float:right; width:315px; margin-top: 20px;}
-body.work-page .project-details dl.overview div.imdb_link a { padding-left: 35px; height: 24px; line-height: 24px; background: url("images/square-imdb.png") 0 0 no-repeat; }
 
 body.work-page .project-details .service_icons { text-align: center; }
 body.work-page .project-details .service_icons img { width: 30px; height: auto; margin: 0 5px;  }
@@ -433,7 +438,8 @@ body.work-page .sub-header .projects-pagination a,
 body.work-page .project-highlights .highlights-slideshow ul.navigation li,
 body.work-page .nivoSlider .nivo-controlNav a,
 ul.services_list li h3,
-body.work-page .project-details div.imdb_link a
+body.work-page .project-details div.imdb_link a,
+body.work-page .project-details dl.overview .links a 
 { display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline; }  
 
 /*BUTTON BOX-SHADOW*/

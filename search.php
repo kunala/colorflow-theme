@@ -15,12 +15,14 @@ get_header(); ?>
     <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'turing' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
     <?php if ( have_posts() ) : ?>
 	  <?php while ( have_posts() ) : the_post(); ?>
-	  <?php get_template_part( 'content', 'search' ); ?>
-	  <?php get_search_form(); ?>
+	    <?php echo get_the_post_thumbnail($post->ID, 'medium'); ?>
+	    <h2><a href="<?php echo the_permalink() ?>"><?php echo the_title(); ?></a></h2>
+	    <?php the_excerpt(); ?>
 	  <?php endwhile; ?>
 	  <?php turing_content_nav( 'nav-below' ); ?>
 		<?php else : ?>
-		<?php get_template_part( 'no-results', 'search' ); ?>
+		  <p>Sorry there's no results for <?php echo get_search_query() ?>.</p>
+		  <?php get_search_form(); ?>
 		<?php endif; ?>
 	</div>
   <?php get_sidebar(); ?>

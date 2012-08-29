@@ -58,6 +58,11 @@ function project_metaboxes( array $meta_boxes ) {
 		'show_names' => true, // Show field names on the left
 		'fields'     => array(
 			array(
+				'name' => 'Project Website',
+				'id'   => $prefix . 'project_website',
+				'type' => 'text_medium',
+			),
+			array(
 				'name' => 'Project IMDB url',
 				'id'   => $prefix . 'project_imdb',
 				'type' => 'text_medium',
@@ -147,6 +152,15 @@ function project_metaboxes( array $meta_boxes ) {
         'save_id' => true, // save ID using true
         'allow' => array('attachment') // limit to just attachments with array( 'attachment' )
       ),
+      array(
+        'name' => 'Awards',
+        'desc' => 'Upload an image or enter an URL.',
+        'id' => $prefix . 'awards',
+        'type' => 'file',
+        'save_id' => true, // save ID using true
+        'allow' => array('attachment') // limit to just attachments with array( 'attachment' )
+      ),
+
 		),
 	);
 	// Add other metaboxes as needed
