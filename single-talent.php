@@ -39,6 +39,7 @@ get_header(); ?>
       <div class='text-content'>
         <?php the_content(); ?>
       </div>
+      <div class="credits">
       <?php 
       $projects_query = array(
         'tax_query'       => array(array('taxonomy' => 'talent','field' => 'id','terms' => $talentID)),
@@ -53,7 +54,7 @@ get_header(); ?>
       $projects = new WP_Query($projects_query);
       if ($projects->have_posts()) :
       ?>
-      <div class="credits">
+      
         <h3>Recent Work</h3>
         <ul class='grid'>
           <?php while ( $projects->have_posts() ) : $projects->the_post(); ?>
@@ -68,10 +69,11 @@ get_header(); ?>
           </li>
           <?php endwhile; ?>
         </ul>
-      </div>
+      
       <?php endif; ?>
       <?php endwhile; ?>
       <?php endif; ?>
+      </div>
     </div>
     <?php get_sidebar(); ?>
   </div>

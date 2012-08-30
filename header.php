@@ -11,7 +11,9 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+<!-- <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, width=device-width" /> -->
 <!-- <meta name="viewport" content="width=device-width" /> -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
 <title>
   <?php
 	global $page, $paged, $pageClass, $pageID;
