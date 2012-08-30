@@ -117,14 +117,14 @@ $i = 1;
     <div class='cta-columns'>
       <div class='col services'>
         <div class='inner'>
-          <h3>Digital Intermediate &amp; HD Finishing</h3>
+          <h3>Acquisition Through Distribution</h3>
           <h2>Services</h2>
           <ul class='cta-list'>
             <li class="di_color">Color Grading</li>
-            <li class="finishing">Finishing</li>
+            <li class="finishing">Online &amp; Finishing</li>
             <li class="lto_data">LTO-5 Data Archiving</li>
             <li class="digital_dalies">Digital Dailies</li>
-            <li class="dcp">Digital Cinema (DCP)</li>
+            <li class="dcp">DCP Mastering</li>
           </ul>
           <a class='more' href='services'>View All Services</a>
         </div>
@@ -136,7 +136,7 @@ $i = 1;
           <ul class='cta-list'>
             <li class="theater">DI Theater</li>
             <li class="hd_suites">HD Suites</li>
-            <li class="parking">Easy, Secure Parking</li>
+            <li class="parking">Private Parking</li>
             <li class="near_food">Near Gourmet Ghetto</li>
             <li class="transportation">Close to BART, OAK, SFO</li>
           </ul>
